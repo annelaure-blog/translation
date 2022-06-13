@@ -35,12 +35,10 @@ Le processus de travail pour la lecture évolutive de données structurées que 
 
 1. **L'exploration chronologique du jeu de données** : Dans le jeu de données Twitter, nous explorons comment un phénomène spécifique génère de l'intérêt sur la plateforme durant une certaine période de temps. Dans le cas des données de la Galerie Nationale, nous aurions pu analyser la distribution temporelle de leurs collections, c'est-à-dire classer les données par année d'acquisition ou par année de création des oeuvres.
 2. **Explorer un jeu de données en créant des catégories analytiques binaires** : Cette étape suggère l'utilisation de catégories existantes de métadonnées pour créer des questions de nature binaire, soit des questions qui appellent une réponse de type oui/non ou vrai/faux. Nous utilisons la création d'une structure analytique binaire comme moyen d'étudier les tendances générales d'un jeu de données. Dans le jeu de données Twitter, nous explorons l'usage des hashtags (versus leur non usage); la distribution des tweets via des comptes vérifiés versus des comptes non vérifiés, et le niveau d'interaction pour ces deux types de comptes. Dans le cas de la Galerie Nationale, nous aurions pu utiliser les métadonnées sur le type d'oeuvre d'art, le genre et la nationalité pour explorer la représentation des artistes Danois versus les autres nationalités d'artistes; les peintures versus les autres types d'oeuvres; ou encore les artistes par genre, etc.
-3. **Sélection systématique de points de données uniques pour la lecture attentive** : 
+3. **Sélection systématique de points de données uniques pour la lecture attentive** : Cette étape suggère une manière systématique et reproductible de sélection de points de données uniques pour la lecture attentive. Dans le jeu de données Twitter, nous avons sélectionné pour la lecture attentive les 20 tweets les plus likés. Dans le cas de la Galerie Nationale, nous aurions pu choisir par exemple les 20 oeuvres les plus exposées, empruntées ou annotées.
+
+Ci-dessous, les trois étapes sont expliquées en des termes généraux mais aussi plus spécifiquement à partir de l'exemple des données Twitter.
 
      
 
-    Systematic selection of single datapoints for close reading
-    This step suggests a systematic and reproducible way of selecting single datapoints for close reading. In the Twitter dataset, we selected for close reading the 20 most commonly liked tweets. In the case of the National Gallery data it could, for instance, be the top 20 most exhibited, borrowed, or annotated items.
-
-Below, the three steps are explained in general terms as well as specifically using our Twitter example.
 
