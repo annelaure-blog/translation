@@ -42,7 +42,7 @@ avatar_alt: Description de l'image de la leçon
   - [lubridate](#lubridate)
   - [jsonlite](#jsonlite)
   - [rtweet](#rtweet)
-- [Etape 1 Exploration chronologique du jeu de données](#Etape-1 Exploration-chronologique-du-jeu-de-données)
+- [Etape 1 Exploration chronologique du jeu de données](#Etape-1-Exploration-chronologique-du-jeu-de-données)
 
 
 
