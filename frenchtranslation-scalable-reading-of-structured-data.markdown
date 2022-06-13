@@ -134,9 +134,11 @@ La deuxième question requière un tri prélable des données avant qu'il soit p
       mutate(has_sesame_ht = str_detect(text, regex("#sesamestreet", ignore_case = TRUE))) %>% 
       mutate(date = date(created_at)) %>% 
       count(date, has_sesame_ht)
+ 
+ </br>
 
     A tibble: 20 x 3
-    date       has_sesame_ht     n
+       date       has_sesame_ht     n
        <date>     <lgl>         <int>
      1 2021-12-04 FALSE            99
      2 2021-12-04 TRUE             17
@@ -159,7 +161,7 @@ La deuxième question requière un tri prélable des données avant qu'il soit p
     19 2021-12-13 FALSE            55
     20 2021-12-13 TRUE             35
 
-Ce processus permet la création d'une nouvelle colonne à laquelle est attribuée une valeur "TRUE" (vrai) si le tweet contient le hashtag et "FALSE" (faux) si ce n'est pas le cas. Ceci est obtenu avec la fonction `mutate()`, qui crée une nouvelle colonne nommée "has_sesame_ht" (contient le hashtag "sesame"). Pour ajouter les valeurs TRUE/FALSE dans cette colonne, la fonction utilisée est `str_detect()'. Cette fonction a pour instruction de détecter, dans la colonne "text" dans laquelle se trouvent le tweet. Puis la fonction est ensuite renseignée avec ce qu'elle doit détecter. Ici on utilise la fonction `regex()` dans `str_detect()`, et ce faisant il est possible de préciser que vous êtes intéressé par toutes les variations du hashtag (par exempe #SesameStreet, #Sesamestreet, #sesamestreet, #SESAMESTREET, etc.).
+Ce processus permet la création d'une nouvelle colonne à laquelle est attribuée une valeur "TRUE" (vrai) si le tweet contient le hashtag et "FALSE" (faux) si ce n'est pas le cas. Ceci est obtenu avec la fonction `mutate()`, qui crée une nouvelle colonne nommée "has_sesame_ht" (contient le hashtag "sesame"). Pour ajouter les valeurs TRUE/FALSE dans cette colonne, la fonction utilisée est `str_detect()`. Cette fonction a pour instruction de détecter, dans la colonne "text" dans laquelle se trouvent le tweet. Puis la fonction est ensuite renseignée avec ce qu'elle doit détecter. Ici on utilise la fonction `regex()` dans `str_detect()`, et ce faisant il est possible de préciser que vous êtes intéressé par toutes les variations du hashtag (par exempe #SesameStreet, #Sesamestreet, #sesamestreet, #SESAMESTREET, etc.).
 Ceci est obtenu en paramétrant "ignore_case = TRUE" dans la fonction `regex()` qui applique une expression régulière à vos données. Les expressions régulières peuvent être vue comme une fonction "recherche et remplace" étendue. </br>
 Si vous souhaitez explorer les expressions régulières de manière plus approfondie, vous pouvez consulter l'article [Comprendre les expressions régulières](https://programminghistorian.org/fr/lecons/comprendre-les-expressions-regulieres).
 
