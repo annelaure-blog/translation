@@ -55,12 +55,11 @@ Dans R, vous travaillez avec des paquets (*packages*), chacun ajoutant des fonct
      
 Afin de pouvoir suivre les exemples de code, assurez-vous d'avoir installé et chargé les paquets R suivants :
 
-To follow the coding examples, make sure you have installed and loaded the following packages in R:
-
 ## tidyverse
 Le paquet "tidyverse" est un paquet parapluie qui charge plusieurs librairies toutes utiles lorsqu'il s'agit de travailler avec des données. Pour plus d'informations et savoir comment utiliser tidyverse, voir [https://www.tidyverse.org](https://www.tidyverse.org) <sup>[1](#reférences)</sup>.
 
 
+___
 
 lubridate
 lubridate
@@ -73,9 +72,8 @@ The package “jsonlite” is for handling the dataformat Javascript Object Nota
 
 If you already have a JSON file containing your twitter data, you can use the fromJSON-function in the “jsonlite”-package to upload the data into your R environment.
 
-# References
+# Références
 
 (1) Lucy D’Agostino McGowan, Romain François, Garrett Grolemund, Alex Hayes, Lionel Henry, Jim Hester, Max Kuhn, Thomas Lin Pedersen, Evan Miller, Stephan Milton Bache, Kirill Müller, Jeroen Ooms, David Robinson, Dana Paige Seidel, Vitalie Spinu, Kohske Takahashi, Davis Vaughan, Claus Wilke, Kara Woo, and Hiroaki Yutani (2019). “Welcome to the tidyverse.” Journal of Open Source Software, 4(43), 1686, 1-6. doi: 10.21105/joss.01686
 
-l
 
