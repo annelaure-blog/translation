@@ -1,7 +1,11 @@
 
-#Table des matières
+# Table des matières
 
-[Objectifs de la leçon](#Objectifs-de-la-leçon) 
+- [Objectifs de la leçon](#Objectifs-de-la-leçon) 
+- [Structure de la leçon](#Structure-de-la-leçon)
+- [La lecture évolutive (*scalable reading*), une introduction aux méthodes digitales pour les débutants)](#La-lecture-évolutive-(*scalable-reading*),-une-introduction-aux-méthodes-digitales-pour-les-débutants)
+- [La lecture évolutive (*scalable reading*)](#La-lecture-évolutive-(*scalable-reading*))
+- [Données et prérequis](Données et prérequis)
 
 
 
