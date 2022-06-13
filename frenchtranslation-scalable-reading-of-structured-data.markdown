@@ -184,6 +184,20 @@ Attention, vos données vont être un peu différentes car elles n'ont pas été
 
 ![scalable-reading-of-structured-data-1.png](scalable-reading-of-structured-data-1.png)
 
+Vous allez maintenant visualiser vos résultats. Dans le code ci-dessus, vous avez ajouter le code pour la visualisation des 4 premières lignes de code utilisées pour transformer les données et nous aider à explorer la chronologie des tweets avec ou sans le hashtag officiel "#sesamestreet".
+Pour reprendre là où le dernier bloc de code s'était arrêté, vous poursuivez avec la fonction `ggplot`, un paquet graphique associé à "tidyverse". On donne l'instruction à cette fonction de nommer l'axe X en tant que date et le total du comptage des occurences TRUE/FALSE sur l'axe Y. La ligne suivant est la création de la visualisation avec la fonction `geom_line()`, où vous spécifiez “linetype=has_sesame_ht”, ce qui crée deux lignes dans la visualisation, une pour TRUE et une pour FALSE.
+
+___
+
+
+The lines of code following the geom_line() argument tweaks the aesthetics of the visualisation. In this context aesthetics desribes the visual representation of data in your visualisation. scale_linetype()tells R what the lines should be labeled as. scale_x_date() and scale_y_continuous() changes the looks of the x- and y-axis, respectively. At last, the labs() and guides() arguments are used to create descriptive text on the visualisation.
+
+Remember to change the titles in the code below to match your specific dataset (as we wrote above, you are probably not doing this on the 13th December 2021). You’ll find the titles under labs().
+
+You should now have a graph depicting the timely dispersion of tweets in your dataset. We will now proceed with the binary exploration of some of your dataset’s distinctive features.
+
+___
+
 # Références
 
 (1)  Hadley Wickham, Mara Averick, Jennifer Bryan, Winston Chang, Lucy D’Agostino McGowan, Romain François, Garrett Grolemund, Alex Hayes, Lionel Henry, Jim Hester, Max Kuhn, Thomas Lin Pedersen, Evan Miller, Stephan Milton Bache, Kirill Müller, Jeroen Ooms, David Robinson, Dana Paige Seidel, Vitalie Spinu, Kohske Takahashi, Davis Vaughan, Claus Wilke, Kara Woo, and Hiroaki Yutani (2019). “Welcome to the tidyverse.” Journal of Open Source Software, 4(43), 1686, 1-6. doi: [10.21105/joss.01686](https://joss.theoj.org/papers/10.21105/joss.01686)<br/>
