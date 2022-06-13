@@ -1,3 +1,35 @@
+---
+title: "Votre Titre"
+collection: lecons
+layout: lesson
+slug: par ex. introduction-analyse-des-sentiments
+date: AAAA-MM-JJ
+translation_date: AAAA-MM-JJ (champ spécifique aux traductions)
+authors:
+- Prénom Nom
+- Prénom Nom, etc
+reviewers:
+- Prénom Nom
+- Prénom Nom, etc
+editors:
+- Prénom Nom
+translator:
+- Prénom Nom (champ spécifique aux traductions)
+translation-editor:
+- Prénom Nom (champ spécifique aux traductions)
+translation-reviewer:
+- Prénom Nom (champ spécifique aux traductions)
+original: slug to original published lesson (champ spécifique aux traductions)
+review-ticket: e.g. https://github.com/programminghistorian/ph-submissions/issues/108
+difficulty: voir ci-dessous
+activity: UNIQUEMENT UN PARMI: acquiring, transforming, analyzing, presenting, sustaining
+topics:
+ - sujet un (voir ci-dessous)
+ - sujet deux
+abstract: |
+  voir ci-dessous
+avatar_alt: Description de l'image de la leçon
+---
 
 # Table des matières
 
@@ -9,6 +41,7 @@
   - [tidyverse](#tidyverse)
   - [lubridate](#lubridate)
   - [jsonlite](#jsonlite)
+  - [Acquérir un petit jeu de données : rtweet](#Acquérir-un-petit-jeu-de données-:-rtweet)
 
 
 
@@ -73,16 +106,22 @@ Le paquet "lubridate" est utilisé pour manipuler différents formats de dates d
 ## jsonlite
 Le paquet "jsonlite" permet de manipuler le format Javascript Object Notation (json), format utilisé pour échanger des données sur internet. Pour plus d'informations sur le paquet jsonlite, voir : [https://cran.r-project.org/web/packages/jsonlite/index.html3](https://cran.r-project.org/web/packages/jsonlite/index.html3) <sub>[3](#Références)</sub>
 
-Si vous êtes déjà en possession d'un fichier json contenant vos données twitter, vous pouvez utiliser la fonction `fromJSON` dans le paquet "jsonlite" pour téléverser les données dans votre environnement R.
+Si vous êtes déjà en possession d'un fichier json contenant vos données twitter, vous pouvez utiliser la fonction `fromJSON` dans le paquet "jsonlite" pour importer les données dans votre environnement R.
 
 ## Acquérir un petit jeu de données : rtweet
-Le paquet "rtweet" est une implémentation d'appels destinés à collecter et à organiser des données Twitter via l'API REST de Twitter, qui se trouve à l'adresse suivante : [https://developer.twitter.com/en/docs](https://developer.twitter.com/en/docs) <sub>[4](#Références)</sub>
+Le paquet "rtweet" est une implémentation d'appels destinés à collecter et à organiser des données Twitter via l'API REST et l'API stream de Twitter, qui se trouve à l'adresse suivante : [https://developer.twitter.com/en/docs](https://developer.twitter.com/en/docs) <sub>[4](#Références)</sub>
 
-I vous avez déjà acquis des données Twitter et que vous souhaitez suivre les exemples de code à suivre étape par étape, vous pouvez utiliser votre compte twitter et la fonction `search_tweets()` du paquet 'rtweet', pour importer vos données twitter dans votre environnement R. Cette opération va retourner jusqu'à 18 000 tweets des 10 derniers jours. Les données vont être structurées en tableau de données (*dataframe*). Tout comme une feuille de calcul, un tableau de données organise vos données en un tableau à deux dimensions avec des lignes et des colonnes. En copiant le code ci-dessous, vous serez capable de générer un tableau de données basé sur une recherche textuelle libre du terme "sesamestreet" pour suivre notre exemple. Le paramètre q représente votre requête. C'est à cette place qu'il faut taper le contenu qui vous intéresse. Le paramètre n indique le nombre de tweets à retourner.
+Si vous avez déjà acquis des données Twitter et que vous souhaitez suivre les exemples de code à suivre étape par étape, vous pouvez utiliser votre compte twitter et la fonction `search_tweets()` du paquet 'rtweet', pour importer vos données twitter dans votre environnement R. Cette opération va retourner jusqu'à 18 000 tweets datant des 10 derniers jours. Les données vont être structurées en tableau de données (*dataframe*). Tout comme une feuille de calcul, un tableau de données organise vos données en un tableau à deux dimensions avec des lignes et des colonnes. En copiant le code ci-dessous, vous serez capable de générer un tableau de données basé sur une recherche textuelle libre du terme "sesamestreet" pour suivre notre exemple. Le paramètre q représente votre requête. C'est à cette place qu'il faut taper le contenu qui vous intéresse. Le paramètre n indique le nombre de tweets à retourner.
 
     sesamestreet_data <- search_tweets(q = "sesamestreet", n = 18000)
 
+# Etape 1 : Exploration chronologique du jeu de données
 
+Explorer les dimensions chronologiques d'un jeu de données peut faciliter la première analyse globale de vos données. Dans le cas où vous étudiez 
+
+Step 1: Chronological exploration of a Dataset
+
+Exploring a dataset’s chronological dimensions can facilitate the first analytical review of your data. In case you are studying a single phenomenon’s evolvement over time (like our interest in specific events that spurred discussions around Sesame Street), understanding how this phenomenon gained traction and/or how interest dwindled can be revealing as to it significance. It can be the first step in understanding how all of the collected data relates to the phenomenon over time. Interest in timely dispersion could also relate not to an event but rather to a dataset’s total distribution based on a set of categories. For instance, in case you were working on data from the National Gallery, you might wanted to explore the distribution of its collections according to different periods in art history in order to establish which periods are better represented in the National Gallery dataset. Knowledge of the timely dispersion of the overall dataset can help contextualize the individual datapoints selected for close reading in step 3, because it will give you an idea of how a specific datapoint’s relation to the chronology of the entire dataset compares to that of all the other datapoints.
 
 # Références
 
