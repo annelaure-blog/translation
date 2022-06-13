@@ -124,15 +124,12 @@ Par exemple, dans le cas où vous travaillez avec les données de la Galerie Nat
 ## Exemple d'une dispersion temporelle d'un jeu de donnée : les données Twitter
 
 Dans cet exemple, vous allez découvrir à quel point Sesame Street est discuté sur Twitter pendant une certaine période de temps. Vous allez aussi voir combien de tweets utilisent le hashtag officiel "#sesamestreet" durant cette période.
+Dans ce qui suit, vous commencez par un traitement de la donnée avant de passer à la visualisation. Vous interrogez les données via une question en deux parties :
+- premièrement, vous voulez connaître la dispersion des tweets au cours du temps,
+- deuxièmement, vous voulez savoir combien de ces tweets contiennent le hashtage "#sesamestreet"
+La deuxième question requière un tri prélable des données avant qu'il soit possible d'y répondre.
 
-___
 
-In the following, you begin with some data processing before moving on to the actual visualisation. What you are asking the data here is a two-piece question:
-
-    First of you want to know the dispersion of the tweets over time.
-    Second, you want to know how many of these contain a the hashtag “#sesamestreet”.
-
-Especially the last question needs some data wranglig before it is possible to answer it.
 
 
 # Références
