@@ -46,9 +46,12 @@ Si vous souhaitez reproduire l'analyse que nous présentons ci-dessous, en utili
 1. Utiliser l'une des APIs de Twitter, c'est-à-dire leur API dite "Essentielle" (*Essential*) que nous avons utilisé pour récupérer le jeu de données utilisé dans l'exemple (pour en savoir plus sur les APIs, vous pouvez consulter [cette section de la leçon sur l'introduire et peupler un site web avec des données API](https://programminghistorian.org/en/lessons/introduction-to-populating-a-website-with-api-data#what-is-application-programming-interface-api)(en anglais). Ce lien vous mènera [aux options API de Twitter](https://developer.twitter.com/en/docs/twitter-api/getting-started/about-twitter-api). Vous pouvez utiliser le paquet 'rtweet' , avec vos propres identifiants Twitter pour accéder à l'API Twitter via R, comme décrit ci-dessous.
 2. Utiliser notre [guide pour débutants sur les données Twitter](https://programminghistorian.org/en/lessons/beginners-guide-to-twitter-data) par Programming Historian. Choisissez plutôt un export en JSON au lieu du CSV.
 
-Dans R, vous travaillez avec des paquets (*packages*), chacun ajoutant des fonctionnalités aux fonctions de base de R. Les paquets sont souvent créés de manière communautaire et rendus disponibles à la réutilisation. En recourant aux paquets, nous vous tenez sur les épaules d'autres codeurs. Dans cet exemple, les paquets que nous allons utiliser sont les suivants : rtweet, tidyverse, libridate et jsonlite. Pour installer ces paquets dans R, consultez [cette section de la leçon sur le traitement de texte basique dans R](https://programminghistorian.org/en/lessons/basic-text-processing-in-r#package-set-up) (en anglais). Pour utiliser les paquets dans R, il faut les charger via la fonction `libraray()` comme ci-dessous :
+Dans R, vous travaillez avec des paquets (*packages*), chacun ajoutant des fonctionnalités aux fonctions de base de R. Les paquets sont souvent créés de manière communautaire et rendus disponibles à la réutilisation. En recourant aux paquets, nous vous tenez sur les épaules d'autres codeurs. Dans cet exemple, les paquets que nous allons utiliser sont les suivants : rtweet, tidyverse, libridate et jsonlite. Pour installer ces paquets dans R, consultez [cette section de la leçon sur le traitement de texte basique dans R](https://programminghistorian.org/en/lessons/basic-text-processing-in-r#package-set-up) (en anglais). Pour utiliser les paquets dans R, il faut les charger via la fonction `library()` comme ci-dessous :
 
-
+    library(rtweet)
+    library(tidyverse)
+    library(lubridate)
+    library(jsonlite)
      
 
 
