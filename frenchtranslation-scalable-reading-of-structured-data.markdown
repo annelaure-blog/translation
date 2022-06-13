@@ -1,8 +1,8 @@
 ---
-title: "Votre Titre"
+title: "La lecture évolutive de données structurées"
 collection: lecons
 layout: lesson
-slug: par ex. introduction-analyse-des-sentiments
+slug: lecture-evolutive-de-donnees-structurees
 date: AAAA-MM-JJ
 translation_date: AAAA-MM-JJ (champ spécifique aux traductions)
 authors:
@@ -42,6 +42,7 @@ avatar_alt: Description de l'image de la leçon
   - [lubridate](#lubridate)
   - [jsonlite](#jsonlite)
   - [Acquérir un petit jeu de données : rtweet](#Acquérir-un-petit-jeu-de données-:-rtweet)
+- [Etape 1 : Exploration chronologique du jeu de données](#Etape-1-:-Exploration-chronologique-du-jeu-de-données)
 
 
 
@@ -117,11 +118,9 @@ Si vous avez déjà acquis des données Twitter et que vous souhaitez suivre les
 
 # Etape 1 : Exploration chronologique du jeu de données
 
-Explorer les dimensions chronologiques d'un jeu de données peut faciliter la première analyse globale de vos données. Dans le cas où vous étudiez 
+Explorer les dimensions chronologiques d'un jeu de données peut faciliter la première analyse globale de vos données. Dans le cas où vous étudiez l'évolution d'un phénomène au cours du temps (comme notre intérêt autour des évènements précis ayant déclenché des discussions sur Sesame Street), comprendre comment ce phénomène a généré de l'attention et/ou comment cet intérêt diminue peut être révélateur de son importance. Cela peut constituer la première étape de compréhension de la manière dont les données collectées se rapportent au phénomène au cours du temps. L'intérêt pour la dispersion temporelle peut aussi se raporter non pas à un évènement mais plutôt à la distribution totale d'un jeu de données sur la base d'un ensemble de catégories.
+Par exemple, dans le cas où vous travaillez avec les données de la Galerie Nationale, il peut s'avérer utile d'explorer la distribution de ses collections en fonction des différentes périodes d'histoire de l'art afin d'établir quelles périodes sont les mieux représentées dans le jeu de données de la Galerie Nationale. Connaître la dispersion temporelle de l'ensemble du jeu de données aide à contextualiser les points de données individuels sélectionnés pour une lecture attentive à l'étape 3 en cela qu'elle donne une idée de la relation spécifique entre le point de donnée et la chronologie du jeu de données entier, en comparaison de tous les autres points de données.
 
-Step 1: Chronological exploration of a Dataset
-
-Exploring a dataset’s chronological dimensions can facilitate the first analytical review of your data. In case you are studying a single phenomenon’s evolvement over time (like our interest in specific events that spurred discussions around Sesame Street), understanding how this phenomenon gained traction and/or how interest dwindled can be revealing as to it significance. It can be the first step in understanding how all of the collected data relates to the phenomenon over time. Interest in timely dispersion could also relate not to an event but rather to a dataset’s total distribution based on a set of categories. For instance, in case you were working on data from the National Gallery, you might wanted to explore the distribution of its collections according to different periods in art history in order to establish which periods are better represented in the National Gallery dataset. Knowledge of the timely dispersion of the overall dataset can help contextualize the individual datapoints selected for close reading in step 3, because it will give you an idea of how a specific datapoint’s relation to the chronology of the entire dataset compares to that of all the other datapoints.
 
 # Références
 
