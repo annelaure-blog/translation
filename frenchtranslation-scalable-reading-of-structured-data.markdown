@@ -165,6 +165,16 @@ Ce processus permet la création d'une nouvelle colonne à laquelle est attribu�
 Ceci est obtenu en paramétrant "ignore_case = TRUE" dans la fonction `regex()` qui applique une expression régulière à vos données. Les expressions régulières peuvent être vue comme une fonction "recherche et remplace" étendue. </br>
 Si vous souhaitez explorer les expressions régulières de manière plus approfondie, vous pouvez consulter l'article [Comprendre les expressions régulières](https://programminghistorian.org/fr/lecons/comprendre-les-expressions-regulieres).
 
+La prochaine étape est une autre fonction `mutate()` où vous créez une nouvelle colonne "date". Cette colonne va contenir seulement la date des tweets et non le timestamp complet de Twitter qui contient également les heures, les minutes et les secondes du tweet. Ceci est obtenu avec la fonction `date()` du paquet "lubridate", auquel on donne l'instruction d'extraire la date depuis la colonne "created_at". </br>
+Enfin, la fonction de comptage du paquet "tidyverse" est utilisée pour compter les valeurs TRUE/FALSE de la colonne "has_sesame_ht" par date dans le jeu de données. La fonction "pipe" (%>%) est utilisée pour attacher les commandes de code entre elles et fait l'objet de plus d'explications plus tard, au moment de rattacher plusieurs commandes ensemble.</br>
+Attention, vos données vont être un peu différentes car elles n'ont pas été collectées aux mêmes dates que les nôtres et que la conversation à propos de Sesame Street représentée dans votre jeu de données sera différentes ce qu'elle était avant le 13 décembre lorsque nous avons collecté nos données.
+
+___
+
+
+
+
+___
 
 # Références
 
