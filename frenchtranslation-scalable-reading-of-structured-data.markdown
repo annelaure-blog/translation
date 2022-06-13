@@ -71,11 +71,10 @@ Le paquet "tidyverse" est un paquet parapluie qui charge plusieurs librairies to
 Le paquet "lubridate" est utilisé pour manipuler différents formats de dates dans R, ainsi qu'effectuer des opérations sur ces dates. Le paquet a été créé par le même groupe que celui derrière "tidyverse" mais ne fait pas partie de ce dernier. <sup>[2](#Références)</sup>
 
 ## jsonlite
-Le paquet "jsonlite" permet de manipuler le format Javascript Object Notation (json), format utilisé pour échanger des données sur internet. Pour plus d'informations sur le paquet jsonlite, voir : [https://cran.r-project.org/web/packages/jsonlite/index.html3](https://cran.r-project.org/web/packages/jsonlite/index.html3)
+Le paquet "jsonlite" permet de manipuler le format Javascript Object Notation (json), format utilisé pour échanger des données sur internet. Pour plus d'informations sur le paquet jsonlite, voir : [https://cran.r-project.org/web/packages/jsonlite/index.html3](https://cran.r-project.org/web/packages/jsonlite/index.html3) <sub>[3](#Références)</sub>
 
-Si vou êtes déjà en possession d'un fichier json contenant vos données twitter, vous pouvez utiliser 
+Si vous êtes déjà en possession d'un fichier json contenant vos données twitter, vous pouvez utiliser la fonction `fromJSON` dans le paquet "jsonlite" pour téléverser les données dans votre environnement R.
 
-If you already have a JSON file containing your twitter data, you can use the fromJSON-function in the “jsonlite”-package to upload the data into your R environment.
 
 # Références
 
