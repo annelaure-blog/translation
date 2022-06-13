@@ -127,41 +127,42 @@ Dans cet exemple, vous allez découvrir à quel point Sesame Street est discuté
 Dans ce qui suit, vous commencez par un traitement de la donnée avant de passer à la visualisation. Vous interrogez les données via une question en deux parties :
 - premièrement, vous voulez connaître la dispersion des tweets au cours du temps,
 - deuxièmement, vous voulez savoir combien de ces tweets contiennent le hashtage "#sesamestreet" <br/>
+
 La deuxième question requière un tri prélable des données avant qu'il soit possible d'y répondre.
 
-    sesamestreet_data %>% 
+      sesamestreet_data %>% 
       mutate(has_sesame_ht = str_detect(text, regex("#sesamestreet", ignore_case = TRUE))) %>% 
       mutate(date = date(created_at)) %>% 
       count(date, has_sesame_ht)
 
-    ## # A tibble: 20 x 3
-    ##    date       has_sesame_ht     n
-    ##    <date>     <lgl>         <int>
-    ##  1 2021-12-04 FALSE            99
-    ##  2 2021-12-04 TRUE             17
-    ##  3 2021-12-05 FALSE           165
-    ##  4 2021-12-05 TRUE             53
-    ##  5 2021-12-06 FALSE           373
-    ##  6 2021-12-06 TRUE             62
-    ##  7 2021-12-07 FALSE           265
-    ##  8 2021-12-07 TRUE             86
-    ##  9 2021-12-08 FALSE           187
-    ## 10 2021-12-08 TRUE             93
-    ## 11 2021-12-09 FALSE           150
-    ## 12 2021-12-09 TRUE             55
-    ## 13 2021-12-10 FALSE           142
-    ## 14 2021-12-10 TRUE             59
-    ## 15 2021-12-11 FALSE           196
-    ## 16 2021-12-11 TRUE             41
-    ## 17 2021-12-12 FALSE           255
-    ## 18 2021-12-12 TRUE             44
-    ## 19 2021-12-13 FALSE            55
-    ## 20 2021-12-13 TRUE             35
+    A tibble: 20 x 3
+    date       has_sesame_ht     n
+       <date>     <lgl>         <int>
+     1 2021-12-04 FALSE            99
+     2 2021-12-04 TRUE             17
+     3 2021-12-05 FALSE           165
+     4 2021-12-05 TRUE             53
+     5 2021-12-06 FALSE           373
+     6 2021-12-06 TRUE             62
+     7 2021-12-07 FALSE           265
+     8 2021-12-07 TRUE             86
+     9 2021-12-08 FALSE           187
+    10 2021-12-08 TRUE             93
+    11 2021-12-09 FALSE           150
+    12 2021-12-09 TRUE             55
+    13 2021-12-10 FALSE           142
+    14 2021-12-10 TRUE             59
+    15 2021-12-11 FALSE           196
+    16 2021-12-11 TRUE             41
+    17 2021-12-12 FALSE           255
+    18 2021-12-12 TRUE             44
+    19 2021-12-13 FALSE            55
+    20 2021-12-13 TRUE             35
 
 Ce processus permet la création d'une nouvelle colonne à laquelle est attribuée une valeur "TRUE" (vrai) si le tweet contient le hashtag et "FALSE" (faux) si ce n'est pas le cas. Ceci est obtenu avec la fonction `mutate()`, qui crée une nouvelle colonne nommée "has_sesame_ht" (contient le hashtag "sesame"). Pour ajouter les valeurs TRUE/FALSE dans cette colonne, la fonction utilisée est `str_detect()'. Cette fonction a pour instruction de détecter, dans la colonne "text" dans laquelle se trouvent le tweet. Puis la fonction est ensuite renseignée avec ce qu'elle doit détecter. Ici on utilise la fonction `regex()` dans `str_detect()`, et ce faisant il est possible de préciser que vous êtes intéressé par toutes les variations du hashtag (par exempe #SesameStreet, #Sesamestreet, #sesamestreet, #SESAMESTREET, etc.).
-Ceci est obtenu en paramétrant "ignore_case = TRUE" dans la fonction regex() qui applique une expression normale à vos données.
+Ceci est obtenu en paramétrant "ignore_case = TRUE" dans la fonction `regex()` qui applique une expression régulière à vos données. Les expressions régulières peuvent être vue comme une fonction "recherche et remplace" étendue. </br>
+Si vous souhaitez explorer les expressions régulières de manière plus approfondie, vous pouvez consulter l'article [Comprendre les expressions régulières](https://programminghistorian.org/fr/lecons/comprendre-les-expressions-regulieres).
 
-Next it is told what it is detecting. Here you use the regex()-function within str_detect() and by doing that you can specify that you are interested in all variants of the hashtag (eg #SesameStreet, #Sesamestreet, #sesamestreet, #SESAMESTREET, etc.). This is achieved by setting “ignore_case = TRUE” in the regex()-function which applies a regular expression to your data. Regular expressions can be seen as an extendend search-and-replace function. If you want to explore regular expressions further you can read more in the article Understanding Regular Expressions.
 
 # Références
 
