@@ -67,22 +67,23 @@ Afin de pouvoir suivre les exemples de code, assurez-vous d'avoir installé et c
 ## tidyverse
 Le paquet "tidyverse" est un paquet parapluie qui charge plusieurs librairies toutes utiles lorsqu'il s'agit de travailler avec des données. Pour plus d'informations et savoir comment utiliser tidyverse, voir [https://www.tidyverse.org](https://www.tidyverse.org) <sup>[1](#Références)</sup>.
 
+## lubridate
+Le paquet "lubridate" est utilisé pour manipuler différents formats de dates dans R, ainsi qu'effectuer des opérations sur ces dates. Le paquet a été créé par le même groupe que celui derrière "tidyverse" mais ne fait pas partie de ce dernier. <sup>[2](#Références)</sup>
 
-___
+## jsonlite
+Le paquet "jsonlite" permet de manipuler le format Javascript Object Notation (json), format utilisé pour échanger des données sur internet. Pour plus d'informations sur le paquet jsonlite, voir : [https://cran.r-project.org/web/packages/jsonlite/index.html3](https://cran.r-project.org/web/packages/jsonlite/index.html3)
 
-lubridate
-lubridate
-
-The package lubridate is used for handling different date formats in R and doing operations on them. The package was created by the group behind the package “tidyverse”, but is not a core package in the “tidyverse”.2
-jsonlite
-jsonlite
-
-The package “jsonlite” is for handling the dataformat Javascript Object Notation (json), which is a format used for exchanging data on the internet. For more information on the jsonlite-package see https://cran.r-project.org/web/packages/jsonlite/index.html3
+Si vou êtes déjà en possession d'un fichier json contenant vos données twitter, vous pouvez utiliser 
 
 If you already have a JSON file containing your twitter data, you can use the fromJSON-function in the “jsonlite”-package to upload the data into your R environment.
 
 # Références
 
-(1) Lucy D’Agostino McGowan, Romain François, Garrett Grolemund, Alex Hayes, Lionel Henry, Jim Hester, Max Kuhn, Thomas Lin Pedersen, Evan Miller, Stephan Milton Bache, Kirill Müller, Jeroen Ooms, David Robinson, Dana Paige Seidel, Vitalie Spinu, Kohske Takahashi, Davis Vaughan, Claus Wilke, Kara Woo, and Hiroaki Yutani (2019). “Welcome to the tidyverse.” Journal of Open Source Software, 4(43), 1686, 1-6. doi: 10.21105/joss.01686
+(1)  Hadley Wickham, Mara Averick, Jennifer Bryan, Winston Chang, Lucy D’Agostino McGowan, Romain François, Garrett Grolemund, Alex Hayes, Lionel Henry, Jim Hester, Max Kuhn, Thomas Lin Pedersen, Evan Miller, Stephan Milton Bache, Kirill Müller, Jeroen Ooms, David Robinson, Dana Paige Seidel, Vitalie Spinu, Kohske Takahashi, Davis Vaughan, Claus Wilke, Kara Woo, and Hiroaki Yutani (2019). “Welcome to the tidyverse.” Journal of Open Source Software, 4(43), 1686, 1-6. doi: [10.21105/joss.01686](https://joss.theoj.org/papers/10.21105/joss.01686)
+(2) Garrett Grolemund and Hadley Wickham (2011). “Dates and Times Made Easy with lubricate", Journal of Statistical Software, 40(3), 1-25. [www.jstatsoft.org/v40/i03/](www.jstatsoft.org/v40/i03/)
+(3) Ooms, Jeroen (2014). “The jsonlite Package: A Practical and Consistent Mapping Between JSON Data and R Objects.” arXiv preprint arXiv:1403.2805. [arxiv.org/abs/1403.2805](https://arxiv.org/abs/1403.2805)
+(4) Kearney, (2019). "rtweet: Collecting and analyzing Twitter data". Journal of Open Source Software, 4(42), 1829, [https://doi.org/10.21105/joss.01829](https://doi.org/10.21105/joss.01829)
+
+
 
 
