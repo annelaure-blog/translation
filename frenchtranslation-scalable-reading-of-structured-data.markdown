@@ -182,7 +182,7 @@ Attention, vos données vont être un peu différentes car elles n'ont pas été
       labs(title = "Figure 1 - Daily tweets dispersed on whether or not they\ncontain #sesamestreet", y="Number of Tweets", x="Day", subtitle = "Period: 4 december         2021 - 13 december 2021", caption = "Total number of tweets: 2.413") +
       guides(linetype = guide_legend(title = "Whether or not the\ntweet contains \n#sesamestreet"))
 
-
+![scalable-reading-of-structured-data-1.png](scalable-reading-of-structured-data-1.png)
 
 # Références
 
