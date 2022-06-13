@@ -53,5 +53,23 @@ Dans R, vous travaillez avec des paquets (*packages*), chacun ajoutant des fonct
     library(lubridate)
     library(jsonlite)
      
+Afin de pouvoir suivre les exemples de code, assurez-vous d'avoir installé et chargé les paquets R suivants :
 
+To follow the coding examples, make sure you have installed and loaded the following packages in R:
+
+## tidyverse
+Le paquet "tidyverse" est un paquet parapluie qui charge plusieurs librairies toutes utiles lorsqu'il s'agit de travailler avec des données. Pour plus d'informations et savoir comment utiliser tidyverse, voir [https://www.tidyverse.org](https://www.tidyverse.org) <sup>1</sup> .
+
+
+
+lubridate
+lubridate
+
+The package lubridate is used for handling different date formats in R and doing operations on them. The package was created by the group behind the package “tidyverse”, but is not a core package in the “tidyverse”.2
+jsonlite
+jsonlite
+
+The package “jsonlite” is for handling the dataformat Javascript Object Notation (json), which is a format used for exchanging data on the internet. For more information on the jsonlite-package see https://cran.r-project.org/web/packages/jsonlite/index.html3
+
+If you already have a JSON file containing your twitter data, you can use the fromJSON-function in the “jsonlite”-package to upload the data into your R environment.
 
