@@ -169,12 +169,20 @@ La prochaine étape est une autre fonction `mutate()` où vous créez une nouvel
 Enfin, la fonction de comptage du paquet "tidyverse" est utilisée pour compter les valeurs TRUE/FALSE de la colonne "has_sesame_ht" par date dans le jeu de données. La fonction "pipe" (%>%) est utilisée pour attacher les commandes de code entre elles et fait l'objet de plus d'explications plus tard, au moment de rattacher plusieurs commandes ensemble.</br>
 Attention, vos données vont être un peu différentes car elles n'ont pas été collectées aux mêmes dates que les nôtres et que la conversation à propos de Sesame Street représentée dans votre jeu de données sera différentes ce qu'elle était avant le 13 décembre lorsque nous avons collecté nos données.
 
-___
+    sesamestreet_data%>% 
+      mutate(has_sesame_ht = str_detect(text, regex("#sesamestreet", ignore_case = TRUE))) %>% 
+      mutate(date = date(created_at)) %>% 
+      count(date, has_sesame_ht) %>% 
+      ggplot(aes(date, n)) +
+      geom_line(aes(linetype=has_sesame_ht)) +
+      scale_linetype(labels = c("No #sesamestreet", "#sesamestreet")) +
+      scale_x_date(date_breaks = "1 day", date_labels = "%b %d") +
+      scale_y_continuous(breaks = seq(0, 400, by = 50)) +
+      theme(axis.text.x=element_text(angle=40, hjust=1)) +
+      labs(title = "Figure 1 - Daily tweets dispersed on whether or not they\ncontain #sesamestreet", y="Number of Tweets", x="Day", subtitle = "Period: 4 december         2021 - 13 december 2021", caption = "Total number of tweets: 2.413") +
+      guides(linetype = guide_legend(title = "Whether or not the\ntweet contains \n#sesamestreet"))
 
 
-
-
-___
 
 # Références
 
