@@ -41,7 +41,7 @@ avatar_alt: Description de l'image de la leçon
   - [tidyverse](#tidyverse)
   - [lubridate](#lubridate)
   - [jsonlite](#jsonlite)
-  - [Acquérir un petit jeu de données : rtweet](#Acquérir-un-petit-jeu-de données-:-rtweet)
+  - [rtweet](#rtweet)
 - [Etape 1 : Exploration chronologique du jeu de données](#Etape-1-:-Exploration-chronologique-du-jeu-de-données)
 
 
@@ -109,7 +109,7 @@ Le paquet "jsonlite" permet de manipuler le format Javascript Object Notation (j
 
 Si vous êtes déjà en possession d'un fichier json contenant vos données twitter, vous pouvez utiliser la fonction `fromJSON` dans le paquet "jsonlite" pour importer les données dans votre environnement R.
 
-## Acquérir un petit jeu de données : rtweet
+## rtweet
 Le paquet "rtweet" est une implémentation d'appels destinés à collecter et à organiser des données Twitter via l'API REST et l'API stream de Twitter, qui se trouve à l'adresse suivante : [https://developer.twitter.com/en/docs](https://developer.twitter.com/en/docs) <sub>[4](#Références)</sub>
 
 Si vous avez déjà acquis des données Twitter et que vous souhaitez suivre les exemples de code à suivre étape par étape, vous pouvez utiliser votre compte twitter et la fonction `search_tweets()` du paquet 'rtweet', pour importer vos données twitter dans votre environnement R. Cette opération va retourner jusqu'à 18 000 tweets datant des 10 derniers jours. Les données vont être structurées en tableau de données (*dataframe*). Tout comme une feuille de calcul, un tableau de données organise vos données en un tableau à deux dimensions avec des lignes et des colonnes. En copiant le code ci-dessous, vous serez capable de générer un tableau de données basé sur une recherche textuelle libre du terme "sesamestreet" pour suivre notre exemple. Le paramètre q représente votre requête. C'est à cette place qu'il faut taper le contenu qui vous intéresse. Le paramètre n indique le nombre de tweets à retourner.
