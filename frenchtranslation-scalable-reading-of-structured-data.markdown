@@ -56,7 +56,7 @@ Dans R, vous travaillez avec des paquets (*packages*), chacun ajoutant des fonct
 Afin de pouvoir suivre les exemples de code, assurez-vous d'avoir installé et chargé les paquets R suivants :
 
 ## tidyverse
-Le paquet "tidyverse" est un paquet parapluie qui charge plusieurs librairies toutes utiles lorsqu'il s'agit de travailler avec des données. Pour plus d'informations et savoir comment utiliser tidyverse, voir [https://www.tidyverse.org](https://www.tidyverse.org) <sup>[1](#reférences)</sup>.
+Le paquet "tidyverse" est un paquet parapluie qui charge plusieurs librairies toutes utiles lorsqu'il s'agit de travailler avec des données. Pour plus d'informations et savoir comment utiliser tidyverse, voir [https://www.tidyverse.org](https://www.tidyverse.org) <sup>[1](#Références)</sup>.
 
 
 ___
