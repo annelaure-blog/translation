@@ -3,8 +3,8 @@
 
 - [Objectifs de la leçon](#Objectifs-de-la-leçon) 
 - [Structure de la leçon](#Structure-de-la-leçon)
-- [La lecture évolutive (*scalable reading*), une introduction aux méthodes digitales pour les débutants](#La-lecture-évolutive-(*scalable-reading*),-une-introduction-aux-méthodes-digitales-pour-les-débutants)
-- [La lecture évolutive (*scalable reading*)](#La-lecture-évolutive-(*scalable-reading*))
+- [La lecture évolutive, une introduction aux méthodes digitales pour les débutants](#La-lecture-évolutive-,-une-introduction-aux-méthodes-digitales-pour-les-débutants)
+- [La lecture évolutive](#La-lecture-évolutive)
 - [Données et prérequis](#Données-et-prérequis)
   - [tidyverse](#tidyverse)
   - [lubridate](#lubridate)
@@ -31,11 +31,11 @@ utilisée comme contexte pour une lecture attentive de points de données distin
 En combinant ces deux cheminements, nous montrons comment la lecture extensible peut être employée pour analyser une large variété de données structurées.
 Notre processus de travail évolutif suggéré inclus deux types de lectures distantes qui peuvent aider à explorer et analyser les caractéristiques globales de grands jeux de données (chronologiquement et en relation avec des structures binaires), en plus de permettre l'utilisation de la lecture distante pour sélectionner des points de données individuels pour une lecture attentive (*close reading*) de manière systématique et reproductible.
 
-# La lecture évolutive (*scalable reading*), une introduction aux méthodes digitales pour les débutants
+# La lecture évolutive, une introduction aux méthodes digitales pour les débutants
 
 La combinaison de lecture distante (*distant reading*) et de lecture attentive (*close reading*) introduites dans cette leçon est entendue comme une introduction aux méthodes digitales pour les étudiants et les chercheurs qui débutent dans l'incorporation du raisonnement computationnel à leur travail. En connectant la lecture distante de grands jeux de données à la lecture attentive de points de données individuels, vous créez un pont entre les méthodes computationnelles et les méthodes de curation manuelles communément employées dans les humanités. De notre expérience, la lecture évolutive (*scalable reading*) - où l'analyse d'un jeu de données entier représente un ensemble de contextes pour la lecture attentive - prévient les difficultés que les personnes débutantes peuvent rencontrer en interrogeant leur matériel qui peut être exploré via le raisonnement computationnel. La manière reproductible de sélectionner chaque cas individuellement pour un examen approfondi éclaire, par exemple, les questions centrales au sein de disciplines comme l'histoire et la sociologie concernant les relations entre un contexte général et un cas d'étude particulier, mais peut aussi être utile à d'autres disciplines des humanités qui travaillent avec des cadres analytiques similaires. 
 
-# La lecture évolutive (*scalable reading*)
+# La lecture évolutive
 
 Nous avons utilisé à l'origine le processus de travail présenté ci-dessous pour analyser les souvenirs que les enfants états-uniens ont du programme télévisé *Sesame Street* sur Twitter. Nous avons utilisé une combinaison de lecture attentive (*close reading*) et de lecture distante (*distant reading*) pour découvrir comment certains évènements ont généré des discussions sur l'histoire de *Sesame Street*, quels utilisateurs de Twitter dominaient le discours à propos de l'histoire de *Sesame Street*, et quels parties de l'histoire de l'émission étaient mises en exergue. Notre exemple ci-dessous utilise un petit jeu de données en lien avec les tweets concernant *Sesame Street*. Toutefois, le même cadre analytique peut être utilisé pour analyser de nombreux autres types de données structurées.
 Afin de démontrer l'applicabilité du processus de travail sur d'autres types de données, nous abordons comment ce dernier pourrait être appliqué à des ensembles de données structurées depuis les collections numérisées de la Galerie Nationale du Danemark. Les données de la Galerie Nationale sont très différentes des données Twitter utilisées dans l'exemple, mais l'idée d'utiliser la lecture distante pour contextualiser un travail de lecture attentive s'applique aussi bien avec des données Twitter.
@@ -74,6 +74,14 @@ Le paquet "lubridate" est utilisé pour manipuler différents formats de dates d
 Le paquet "jsonlite" permet de manipuler le format Javascript Object Notation (json), format utilisé pour échanger des données sur internet. Pour plus d'informations sur le paquet jsonlite, voir : [https://cran.r-project.org/web/packages/jsonlite/index.html3](https://cran.r-project.org/web/packages/jsonlite/index.html3) <sub>[3](#Références)</sub>
 
 Si vous êtes déjà en possession d'un fichier json contenant vos données twitter, vous pouvez utiliser la fonction `fromJSON` dans le paquet "jsonlite" pour téléverser les données dans votre environnement R.
+
+## Acquérir un petit jeu de données : rtweet
+Le paquet "rtweet" est une implémentation d'appels destinés à collecter et à organiser des données Twitter via l'API REST de Twitter, qui se trouve à l'adresse suivante : [https://developer.twitter.com/en/docs](https://developer.twitter.com/en/docs) <sub>[4](#Références)</sub>
+
+I vous avez déjà acquis des données Twitter et que vous souhaitez suivre les exemples de code à suivre étape par étape, vous pouvez utiliser votre compte twitter et la fonction `search_tweets()` du paquet 'rtweet', pour importer vos données twitter dans votre environnement R. Cette opération va retourner jusqu'à 18 000 tweets des 10 derniers jours. Les données vont être structurées en tableau de données (*dataframe*). Tout comme une feuille de calcul, un tableau de données organise vos données en un tableau à deux dimensions avec des lignes et des colonnes. En copiant le code ci-dessous, vous serez capable de générer un tableau de données basé sur une recherche textuelle libre du terme "sesamestreet" pour suivre notre exemple. Le paramètre q représente votre requête. C'est à cette place qu'il faut taper le contenu qui vous intéresse. Le paramètre n indique le nombre de tweets à retourner.
+
+    sesamestreet_data <- search_tweets(q = "sesamestreet", n = 18000)
+
 
 
 # Références
