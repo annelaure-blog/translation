@@ -42,9 +42,9 @@ avatar_alt: Description de l'image de la leçon
   - [lubridate](#lubridate)
   - [jsonlite](#jsonlite)
   - [rtweet](#rtweet)
-- [Etape 1 : Exploration chronologique du jeu de données](#Etape-1 : Exploration-chronologique-du-jeu-de-données)
-  - [Exemple d'une dispersion temporelle d'un jeu de données : les données Twitter](#Exemple-d'une-dispersion-temporelle-d'un-jeu-de-données : les-données-Twitter)
-- [Etape 2 : Explorer un jeu de données en créant des catégories binaires analytiques](#Etape-2 : Explorer-un-jeu-de-données-en-créant-des-catégories-binaires-analytiques)
+- [Etape 1 : Exploration chronologique du jeu de données](#Etape-1 Exploration-chronologique-du-jeu-de-données)
+  - [Exemple d'une dispersion temporelle d'un jeu de données : les données Twitter](#Exemple-d'une-dispersion-temporelle-d'un-jeu-de-données-avec-les-données-Twitter)
+- [Etape 2 : Explorer un jeu de données en créant des catégories binaires analytiques](#Etape-2-Explorer-un-jeu-de-données-en-créant-des-catégories-binaires-analytiques)
 
 
 
@@ -118,12 +118,12 @@ Si vous avez déjà acquis des données Twitter et que vous souhaitez suivre les
 
     sesamestreet_data <- search_tweets(q = "sesamestreet", n = 18000)
 
-# Etape 1 : Exploration chronologique du jeu de données
+# Etape 1 Exploration chronologique du jeu de données
 
 Explorer les dimensions chronologiques d'un jeu de données peut faciliter la première analyse globale de vos données. Dans le cas où vous étudiez l'évolution d'un phénomène au cours du temps (comme notre intérêt autour des évènements précis ayant déclenché des discussions sur Sesame Street), comprendre comment ce phénomène a généré de l'attention et/ou comment cet intérêt diminue peut être révélateur de son importance. Cela peut constituer la première étape de compréhension de la manière dont les données collectées se rapportent au phénomène au cours du temps. L'intérêt pour la dispersion temporelle peut aussi se raporter non pas à un évènement mais plutôt à la distribution totale d'un jeu de données sur la base d'un ensemble de catégories.
 Par exemple, dans le cas où vous travaillez avec les données de la Galerie Nationale, il peut s'avérer utile d'explorer la distribution de ses collections en fonction des différentes périodes d'histoire de l'art afin d'établir quelles périodes sont les mieux représentées dans le jeu de données de la Galerie Nationale. Connaître la dispersion temporelle de l'ensemble du jeu de données aide à contextualiser les points de données individuels sélectionnés pour une lecture attentive à l'étape 3 en cela qu'elle donne une idée de la relation spécifique entre le point de donnée et la chronologie du jeu de données entier, en comparaison de tous les autres points de données.
 
-## Exemple d'une dispersion temporelle d'un jeu de données : les données Twitter
+## Exemple d'une dispersion temporelle d'un jeu de données avec les données Twitter
 
 Dans cet exemple, vous allez découvrir à quel point Sesame Street est discuté sur Twitter pendant une certaine période de temps. Vous allez aussi voir combien de tweets utilisent le hashtag officiel "#sesamestreet" durant cette période.
 Dans ce qui suit, vous commencez par un traitement de la donnée avant de passer à la visualisation. Vous interrogez les données via une question en deux parties :
@@ -192,7 +192,7 @@ Les lignes de code suivant l'argument de `geom_line()` ajustent les propriétés
 N'oubliez pas de changer les titres dans le code ci-dessous pour correspondre à votre jeu de données (comme nous l'écrivions plus haut, vous ne faisez probablement pas cet exercice le 13 décembre 2021). Vous trouverez les titres dans la fonction `labs()`.</br>
 Vous devriez maintenant obtenir un graphique illustrant la dispersion des tweets de votre jeu de données. Nous allons maintenant procéder à l'exploration binaire de certaines caractéristiques de votre jeu de données.
 
-# Etape 2 : Explorer un jeu de données en créant des catégories binaires analytiques
+# Etape 2 Explorer un jeu de données en créant des catégories binaires analytiques
 
 Step 2: Exploring a dataset by creating binary-analytical categories
 ___
