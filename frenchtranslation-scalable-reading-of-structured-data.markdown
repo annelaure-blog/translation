@@ -45,6 +45,7 @@ avatar_alt: Description de l'image de la leçon
 - [Etape 1 : Exploration chronologique du jeu de données](#Etape-1-Exploration-chronologique-du-jeu-de-données)
   - [Exemple d'une dispersion temporelle d'un jeu de données : les données Twitter](#Exemple-d'une-dispersion-temporelle-d'un-jeu-de-données-avec-les-données-Twitter)
 - [Etape 2 : Explorer un jeu de données en créant des catégories binaires analytiques](#Etape-2-Explorer-un-jeu-de-données-en-créant-des-catégories-binaires-analytiques)
+  - [Exemple d'une exploration binaire avec des données Twitter](#Exemple-d'une-exploration-binaire-avec-des-données-Twitter)
 
 
 
@@ -201,7 +202,25 @@ Supposons que vous travaillez avec les données de la Galerie Nationale. Dans ce
 Connaître la distribution des données en deux catégories va aussi vous permettre d'établir la représentativité d'un seul point de donnée vis-à-vis de la distribution de sa catégorie pour le jeu de données entier. Par exemple, si à l'étape 3 vous choisissez de travailler sur les 20 tweets les plus "likés", vous pourriez être en mesure de voir que même s'il y avait beaucoup de tweets provenant de comptes vérifiés dans cette sélection, ces comptes n'étaient pas bien représentés dans le jeu de données  global. Les 20 tweets les plus "likés" que vous avez sélectionné ne sont ainsi pas représentatifs des tweets de la plupart des comptes de votre jeu de données. Ils représentent un petit pourcentage de tweets plus "likés" que la majorité de votre échantillon.
 Si vous choisissiez de travailler sur les 20 oeuvres d'art les plus explosées du jeu de données de la Galerie Nationale, une  exploration binaire des artistes Danois versus les non-Danois peut révéler que les oeuvres les plus exposées sont toutes issues d'artistes internationaux, une catégorie par ailleurs peu représentée dans les collections du musée.
 
+## Exemple d'une exploration binaire avec des données Twitter
 
+Dans cet exemple, vous vous intéressez à l'exploration de la distribution du statut (vérifié ou non vérifié) des comptes qui tweetent à propos de Sesame Street. Dans ce premier exemple de manipulation de données, vous suivez chaque étape qui montrent la logique du tuyau (*pipe*) (`%>%`) dans R. Une fois que vous serez à l'aise avec cette logique, le reste de la manipulation de données sera plus facile à lire et à comprendre. Le but général de cette section est de découvrir comment les tweets se répartissent entre comptes vérifiés et non vérifiés, puis de visualiser le résultat.
+
+    sesamestreet_data %>% 
+      count(verified)
+
+    ## # A tibble: 2 x 2
+    ##   verified     n
+    ## * <lgl>    <int>
+    ## 1 FALSE     2368
+    ## 2 TRUE        64
+
+En utilisant le tuyau `%>%` vous filtrez progressivement vos données. La donnée circule à travers le tuyau comme de l'eau ! Ici nous "versons" vos données
+dans la fonction "compte" et nous demandons de compter la colonne "comptes vérifiés" qui contient deux valeurs
+
+Using the pipe %>% you pass the data on downwards - the data is flowing through the pipe like water! Here you pour the data to the count-function and ask it to count on the column “verified” that holds two values. Either it has “TRUE”, then the account is verified, or it has “FALSE” - then it isn’t.
+
+So now you have the count - but it would make more sense to have these figures in percentage. Therefore our next step will be adding another pipe and a piece of code creating a new column holding the number of total tweets in our dataset, this is necessary for calculating the percentage later.
 ___
 
 # Références
