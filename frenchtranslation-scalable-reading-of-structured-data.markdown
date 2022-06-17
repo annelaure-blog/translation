@@ -219,6 +219,48 @@ En utilisant le tuyau `%>%` vous filtrez progressivement vos données. La donné
 dans la fonction `count` et nous demandons de compter la colonne "comptes vérifiés" qui contient deux valeurs, soit VRAI si le compte est vérifié et FAUX lorsqu'il ne l'est pas.
 Vous obtenez donc le décompte - mais il est plus intéressant d'obtenir ces données en pourcentages (plutôt qu'en valeurs absolues). Notre prochaine étape est donc d'ajouter un autre tuyau et un morceau de code afin de créer une nouvelle colonne qui contient le nombre total de tweets dans notre jeu de données, ce dont nous aurons besoin pour calculer les pourcentages ensuite.
 
+    sesamestreet_data %>% 
+    count(verified) %>% 
+    mutate(total = nrow(sesamestreet_data))
+
+     ## # A tibble: 2 x 3
+     ##   verified     n total
+     ## * <lgl>    <int> <int>
+     ## 1 FALSE     2368  2432
+     ## 2 TRUE        64  2432
+   
+Vous obtenez le nombre total de tweets en utilisant la fonction `nrow()` qui retourne le nombre de lignes depuis un tableau de données. Dans votre jeu de données, une ligne équivaut à un tweet.
+En utilisant un autre tuyau, vous créez maintenant une colonne nommée "pourcentages" où vous calculez et stockez le pourcentage de dispersion entre les tweets
+issus de comptes vérifiés et non vérifiés :
+
+    sesamestreet_data %>% 
+    count(verified) %>% 
+    mutate(total = nrow(sesamestreet_data)) %>% 
+    mutate(pct = (n / total) * 100)
+
+    ## # A tibble: 2 x 4
+    ##   verified     n total   pct
+    ## * <lgl>    <int> <int> <dbl>
+    ## 1 FALSE     2368  2432 97.4 
+    ## 2 TRUE        64  2432  2.63
+    
+La prochaine étape est de visualiser le résultat. Ici nous utilisons le paquet "ggplot2" pour créer un graphique en barres :
+
+    sesamestreet_data %>% 
+    count(verified) %>% 
+    mutate(total = nrow(sesamestreet_data)) %>% 
+    mutate(pct = (n / total) * 100) %>% 
+    ggplot(aes(x = verified, y = pct)) +
+    geom_col() +
+    scale_x_discrete(labels=c("FALSE" = "Not Verified", "TRUE" = "Verified"))+
+        labs(x = "Verified status",
+        y = "Percentage",
+        title = "Figure 2 - Percentage of tweets coming from verified and non-verified\naccounts in the sesamestreet-dataset",
+        subtitle = "Period: 4 December 2021 - 13 December 2021", 
+        caption = "Total number of tweets: 2435") + 
+   theme(axis.text.y = element_text(angle = 14, hjust = 1))
+   
+![
 ___
 
 # Références
