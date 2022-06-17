@@ -45,7 +45,7 @@ avatar_alt: Description de l'image de la leçon
 - [Etape 1 : Exploration chronologique du jeu de données](#Etape-1-Exploration-chronologique-du-jeu-de-données)
   - [Exemple d'une dispersion temporelle d'un jeu de données : les données Twitter](#Exemple-d'une-dispersion-temporelle-d'un-jeu-de-données-avec-les-données-Twitter)
 - [Etape 2 : Explorer un jeu de données en créant des catégories binaires analytiques](#Etape-2-Explorer-un-jeu-de-données-en-créant-des-catégories-binaires-analytiques)
-  - [Exemple d'une exploration binaire avec des données Twitter](#Exemple-d'-une-exploration-binaire-avec-des-données-Twitter)
+  - [Exemple d'une exploration binaire avec des données Twitter](#Exemple-d-'-une-exploration-binaire-avec-des-données-Twitter)
 
 
 
@@ -209,6 +209,8 @@ Dans cet exemple, vous vous intéressez à l'exploration de la distribution du s
     sesamestreet_data %>% 
       count(verified)
 
+
+
     ## # A tibble: 2 x 2
     ##   verified     n
     ## * <lgl>    <int>
@@ -222,6 +224,7 @@ Vous obtenez donc le décompte - mais il est plus intéressant d'obtenir ces don
     sesamestreet_data %>% 
     count(verified) %>% 
     mutate(total = nrow(sesamestreet_data))
+    
 
      ## # A tibble: 2 x 3
      ##   verified     n total
@@ -237,6 +240,8 @@ issus de comptes vérifiés et non vérifiés :
     count(verified) %>% 
     mutate(total = nrow(sesamestreet_data)) %>% 
     mutate(pct = (n / total) * 100)
+
+
 
     ## # A tibble: 2 x 4
     ##   verified     n total   pct
@@ -258,9 +263,10 @@ La prochaine étape est de visualiser le résultat. Ici nous utilisons le paquet
         title = "Figure 2 - Percentage of tweets coming from verified and non-verified\naccounts in the sesamestreet-dataset",
         subtitle = "Period: 4 December 2021 - 13 December 2021", 
         caption = "Total number of tweets: 2435") + 
-   theme(axis.text.y = element_text(angle = 14, hjust = 1))
+     theme(axis.text.y = element_text(angle = 14, hjust = 1))
+     
    
-![
+![Figure 2](scalable-reading-of-structured-data-2.png)
 ___
 
 # Références
