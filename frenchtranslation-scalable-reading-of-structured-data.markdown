@@ -45,7 +45,7 @@ avatar_alt: Description de l'image de la leçon
 - [Etape 1 : Exploration chronologique du jeu de données](#Etape-1-Exploration-chronologique-du-jeu-de-données)
   - [Exemple d'une dispersion temporelle d'un jeu de données : les données Twitter](#Exemple-d'une-dispersion-temporelle-d'un-jeu-de-données-avec-les-données-Twitter)
 - [Etape 2 : Explorer un jeu de données en créant des catégories binaires analytiques](#Etape-2-Explorer-un-jeu-de-données-en-créant-des-catégories-binaires-analytiques)
-  - [Exemple d'une exploration binaire avec des données Twitter](#Exemple-d'une-exploration-binaire-avec-des-données-Twitter)
+  - [Exemple d'une exploration binaire avec des données Twitter](#Exemple-d'-une-exploration-binaire-avec-des-données-Twitter)
 
 
 
@@ -216,11 +216,9 @@ Dans cet exemple, vous vous intéressez à l'exploration de la distribution du s
     ## 2 TRUE        64
 
 En utilisant le tuyau `%>%` vous filtrez progressivement vos données. La donnée circule à travers le tuyau comme de l'eau ! Ici nous "versons" vos données
-dans la fonction "compte" et nous demandons de compter la colonne "comptes vérifiés" qui contient deux valeurs
+dans la fonction `count` et nous demandons de compter la colonne "comptes vérifiés" qui contient deux valeurs, soit VRAI si le compte est vérifié et FAUX lorsqu'il ne l'est pas.
+Vous obtenez donc le décompte - mais il est plus intéressant d'obtenir ces données en pourcentages (plutôt qu'en valeurs absolues). Notre prochaine étape est donc d'ajouter un autre tuyau et un morceau de code afin de créer une nouvelle colonne qui contient le nombre total de tweets dans notre jeu de données, ce dont nous aurons besoin pour calculer les pourcentages ensuite.
 
-Using the pipe %>% you pass the data on downwards - the data is flowing through the pipe like water! Here you pour the data to the count-function and ask it to count on the column “verified” that holds two values. Either it has “TRUE”, then the account is verified, or it has “FALSE” - then it isn’t.
-
-So now you have the count - but it would make more sense to have these figures in percentage. Therefore our next step will be adding another pipe and a piece of code creating a new column holding the number of total tweets in our dataset, this is necessary for calculating the percentage later.
 ___
 
 # Références
