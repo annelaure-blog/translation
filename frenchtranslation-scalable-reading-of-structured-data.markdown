@@ -45,7 +45,8 @@ avatar_alt: Description de l'image de la leçon
 - [Etape 1 : Exploration chronologique du jeu de données](#Etape-1-Exploration-chronologique-du-jeu-de-données)
   - [Exemple d'une dispersion temporelle d'un jeu de données : les données Twitter](#Exemple-d'une-dispersion-temporelle-d'un-jeu-de-données-avec-les-données-Twitter)
 - [Etape 2 : Explorer un jeu de données en créant des catégories binaires analytiques](#Etape-2-Explorer-un-jeu-de-données-en-créant-des-catégories-binaires-analytiques)
-  - [Exemple d'une exploration binaire avec des données Twitter](#Exemple-d-'-une-exploration-binaire-avec-des-données-Twitter)
+  - [Exemple d'exploration binaire avec des données Twitter](#Exemple-d'-exploration-binaire-avec-des-données-Twitter)
+    - [Interaction avec les comptes vérifiés versus non vérifiés](#Interaction-avec-les-comptes-vérifiés-versus-non-vérifiés)
 
 
 
@@ -202,14 +203,14 @@ Supposons que vous travaillez avec les données de la Galerie Nationale. Dans ce
 Connaître la distribution des données en deux catégories va aussi vous permettre d'établir la représentativité d'un seul point de donnée vis-à-vis de la distribution de sa catégorie pour le jeu de données entier. Par exemple, si à l'étape 3 vous choisissez de travailler sur les 20 tweets les plus "likés", vous pourriez être en mesure de voir que même s'il y avait beaucoup de tweets provenant de comptes vérifiés dans cette sélection, ces comptes n'étaient pas bien représentés dans le jeu de données  global. Les 20 tweets les plus "likés" que vous avez sélectionné ne sont ainsi pas représentatifs des tweets de la plupart des comptes de votre jeu de données. Ils représentent un petit pourcentage de tweets plus "likés" que la majorité de votre échantillon.
 Si vous choisissiez de travailler sur les 20 oeuvres d'art les plus explosées du jeu de données de la Galerie Nationale, une  exploration binaire des artistes Danois versus les non-Danois peut révéler que les oeuvres les plus exposées sont toutes issues d'artistes internationaux, une catégorie par ailleurs peu représentée dans les collections du musée.
 
-## Exemple d'une exploration binaire avec des données Twitter
+## Exemple d'exploration binaire avec des données Twitter
 
 Dans cet exemple, vous vous intéressez à l'exploration de la distribution du statut (vérifié ou non vérifié) des comptes qui tweetent à propos de Sesame Street. Dans ce premier exemple de manipulation de données, vous suivez chaque étape qui montrent la logique du tuyau (*pipe*) (`%>%`) dans R. Une fois que vous serez à l'aise avec cette logique, le reste de la manipulation de données sera plus facile à lire et à comprendre. Le but général de cette section est de découvrir comment les tweets se répartissent entre comptes vérifiés et non vérifiés, puis de visualiser le résultat.
 
     sesamestreet_data %>% 
       count(verified)
-
-
+      
+<br/>
 
     ## # A tibble: 2 x 2
     ##   verified     n
@@ -225,7 +226,8 @@ Vous obtenez donc le décompte - mais il est plus intéressant d'obtenir ces don
     count(verified) %>% 
     mutate(total = nrow(sesamestreet_data))
     
-
+<br/>
+    
      ## # A tibble: 2 x 3
      ##   verified     n total
      ## * <lgl>    <int> <int>
@@ -241,7 +243,7 @@ issus de comptes vérifiés et non vérifiés :
     mutate(total = nrow(sesamestreet_data)) %>% 
     mutate(pct = (n / total) * 100)
 
-
+<br/>
 
     ## # A tibble: 2 x 4
     ##   verified     n total   pct
@@ -264,9 +266,19 @@ La prochaine étape est de visualiser le résultat. Ici nous utilisons le paquet
         subtitle = "Period: 4 December 2021 - 13 December 2021", 
         caption = "Total number of tweets: 2435") + 
      theme(axis.text.y = element_text(angle = 14, hjust = 1))
-     
+ 
+ <br/>
    
 ![Figure 2](scalable-reading-of-structured-data-2.png)
+
+A la différence des visualisations précédentes qui montraient les tweets de manière chronologique, vous utilisez ici la fonction `geom_col` pour créer des colonnes.
+En démarrant avec Ggplot, le tuyau (`%>%`) est remplacé par un `+`.
+
+### Interaction avec les comptes vérifiés versus non vérifiés
+
+Dans cette partie de l'exemple vous souhaitez savoir dans quelle mesure les gens intéragissent avec les tweets des comptes vérifiés versus avec les tweets des comptes non vérifiés. Nous avons choisi de compter les "like" comme une mesure du niveau d'interaction par exemple. Comparer les niveaux d'interaction avec ces deux types
+de  comptes va vous aider à estimer si les comptes vérifiés moins représentés ont plus d'influence et de pouvoir malgré leur faible représentation, parce que les gens interagissent beaucoup plus avec leurs tweets que ceux des comptes non vérifiés.
+
 ___
 
 # Références
