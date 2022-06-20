@@ -43,7 +43,7 @@ avatar_alt: Description de l'image de la leçon
   - [jsonlite](#jsonlite)
   - [rtweet](#rtweet)
 - [Etape 1 : Exploration chronologique du jeu de données](#Etape-1-Exploration-chronologique-du-jeu-de-données)
-  - [Exemple de dispersion temporelle d'un jeu de données : les données Twitter](#Exemple-de-dispersion-temporelle-d'un-jeu-de-données-avec-les-données-Twitter)
+  - [Exemple de dispersion temporelle d'un jeu de données avec les données Twitter](#Exemple-de-dispersion-temporelle-d'un-jeu-de-données-avec-les-données-Twitter)
 - [Etape 2 : Explorer un jeu de données en créant des catégories binaires analytiques](#Etape-2-Explorer-un-jeu-de-données-en-créant-des-catégories-binaires-analytiques)
   - [Exemple d'une exploration binaire avec des données Twitter](#Exemple-d'une-exploration-binaire-avec-des-données-Twitter)
     - [Interaction avec les comptes vérifiés versus non vérifiés](#Interaction-avec-les-comptes-vérifiés-versus-non-vérifiés)
