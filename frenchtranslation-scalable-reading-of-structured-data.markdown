@@ -47,6 +47,7 @@ avatar_alt: Description de l'image de la leçon
 - [Etape 2 : Explorer un jeu de données en créant des catégories binaires analytiques](#Etape-2-Explorer-un-jeu-de-données-en-créant-des-catégories-binaires-analytiques)
   - [Exemple avec une exploration binaire sur des données Twitter](#Exemple-avec-une-exploration-binaire-sur-des-données-Twitter)
     - [Interaction avec les comptes vérifiés versus non vérifiés](#Interaction-avec-les-comptes-vérifiés-versus-non-vérifiés)
+- [# Etape 3 Sélection reproductible et systématique de points de données pour la lecture attentive (*close reading*)](#Etape-3-Sélection-reproductible-et-systématique-de-points-de-données-pour-la-lecture-attentive-(*close-reading*))
 
 
 
@@ -278,6 +279,47 @@ En démarrant avec Ggplot, le tuyau (`%>%`) est remplacé par un `+`.
 
 Dans cette partie de l'exemple vous souhaitez savoir dans quelle mesure les gens intéragissent avec les tweets des comptes vérifiés versus avec les tweets des comptes non vérifiés. Nous avons choisi de compter les "like" comme une mesure du niveau d'interaction par exemple. Comparer les niveaux d'interaction avec ces deux types
 de  comptes va vous aider à estimer si les comptes vérifiés moins représentés ont plus d'influence et de pouvoir malgré leur faible représentation, parce que les gens interagissent beaucoup plus avec leurs tweets que ceux des comptes non vérifiés.
+
+    sesamestreet_data %>% 
+      group_by(verified) %>% 
+      summarise(gns = mean(favorite_count))
+      
+</br>
+
+    ## # A tibble: 2 x 2
+    ##   verified     gns
+    ## * <lgl>      <dbl>
+    ## 1 FALSE      0.892
+    ## 2 TRUE     114.
+
+Dans le code ci-dessus, vous groupez le jeu de données en vous basant sur le statut "vérifié" de chaque tweet. Une fois que vous avez utilisé la fonction `group_by`, toutes les opérations à suivre sont effectuées en prenant en compte les groupes. Autrement dit, l'ensemble des tweets provenant des comptes non vérifiés d'une part, et des comptes vérifiés d'autre part, seront désormais considérés comme des groupes. La prochaine étape est d'utiliser la fonction `summarise` pour calculer la moyenne des “favorite_count” (nombre de likes), c'est-à-dire la moyenne (gns) du nombre de "like" par tweets provenant des comptes non vérifiés VS des comptes vérifiés.
+
+Dans cette prochaine étape, vous ajoutez le résultat obtenu ci-dessus à un tableau de données, avec une nouvelle colonne "interaction" où vous spécifiez qu'il s'agit de "favorite_count".
+
+    interactions <- sesamestreet_data %>% 
+      group_by(verified) %>% 
+      summarise(gns = mean(favorite_count)) %>% 
+      mutate(interaction = "favorite_count")
+      
+De cette manière vous obtenez un tableau de données avec les moyennes des différentes interactions, ce qui rend possible maintenant l'utilisation du paquet Gggplot pour visualiser les données, comme ci-dessous :
+
+    interactions  %>% 
+      ggplot(aes(x = verified, y = gns)) +
+      geom_col() +
+      facet_wrap(~interaction, nrow = 1) +
+      labs(title = "Figure 4 - Means of different interaction count dispersed on the verified\nstatus in the sesammestreet dataset",
+           subtitle = "Period: Period: 4 December 2021 - 13 December 2021",
+           caption = "Total number of tweets: 2411",
+           x = "Verified status",
+           y = "Average of engagements counts") +
+      scale_x_discrete(labels=c("FALSE" = "Not Verified", "TRUE" = "Verified"))
+      
+![Scalable reading of structured data figure 3](scalable-reading-of-structured-data-3.png)
+
+La visualisation ressemble fortement au graphique en barres précédent, mais la différence ici est l'utilisation de `facet_wrap` qui génère trois graphiques en barres pour chaque type d'interaction.
+
+# Etape 3 Sélection reproductible et systématique de points de données pour la lecture attentive (*close reading*)
+
 
 ___
 
