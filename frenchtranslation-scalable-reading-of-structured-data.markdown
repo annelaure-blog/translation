@@ -47,7 +47,7 @@ avatar_alt: Description de l'image de la leçon
 - [Etape 2 : Explorer un jeu de données en créant des catégories binaires analytiques](#Etape-2-Explorer-un-jeu-de-données-en-créant-des-catégories-binaires-analytiques)
   - [Exemple avec une exploration binaire sur des données Twitter](#Exemple-avec-une-exploration-binaire-sur-des-données-Twitter)
     - [Interaction avec les comptes vérifiés versus non vérifiés](#Interaction-avec-les-comptes-vérifiés-versus-non-vérifiés)
-- [Etape 3 : Sélection reproductible et systématique de points de données pour la lecture attentive (*close reading*)](#Etape-3-Sélection-reproductible-et-systématique-de-points-de-données-pour-la-lecture-attentive-(*close-reading*))
+- [Etape 3 : Sélection reproductible et systématique de points de données pour la lecture attentive (*close reading*)](#Etape-3-Sélection-reproductible-et-systématique-de-points-de-données-pour-la-lecture-attentive)
 
 
 
@@ -318,7 +318,7 @@ De cette manière vous obtenez un tableau de données avec les moyennes des diff
 
 La visualisation ressemble fortement au graphique en barres précédent, mais la différence ici est l'utilisation de `facet_wrap` qui génère trois graphiques en barres pour chaque type d'interaction.
 
-# Etape 3 Sélection reproductible et systématique de points de données pour la lecture attentive (*close reading*)
+# Etape 3 Sélection reproductible et systématique de points de données pour la lecture attentive
 
 
 ___
