@@ -48,6 +48,7 @@ avatar_alt: Description de l'image de la leçon
   - [Exemple avec une exploration binaire sur des données Twitter](#Exemple-avec-une-exploration-binaire-sur-des-données-Twitter)
     - [Interaction avec les comptes vérifiés versus non vérifiés](#Interaction-avec-les-comptes-vérifiés-versus-non-vérifiés)
 - [Etape 3 : Sélection reproductible et systématique de points de données pour la lecture attentive (*close reading*)](#Etape-3-Sélection-reproductible-et-systématique-de-points-de-données-pour-la-lecture-attentive)
+    - [Exemple de sélection reproductible et systématique pour la lecture attentive à partir des données Twitter](#Exemple-de-sélection-reproductible-et-systématique-pour-la-lecture-attentive-à-partir-des-données-Twitter)  
 
 
 
@@ -324,9 +325,11 @@ L'un des avantages à combiner la lecture attentive (*close reading*) avec la le
 
 Le nombre de points de données choisis pour la lecture attentive va dépendre du phénomène sur lequel vous enquêtez, de combien de temps vous disposez et de la complexité générale des données. Par exemple, analyser une par une des productions artistiques peut prendre beaucoup plus de temps que la lecture individuelle de tweets, mais bien entendu cela dépend de votre objectif. Il est donc important d'être systématique dans la sélection de points de données afin de rester conforme à vos questions de recherche. Dans notre cas, nous souhaitions en savoir plus sur comment les tweets les plus "likés" représentent Sesame Street ; comment ils parlent de l'émission et de son histoire, s'ils contiennent des liens vers d'autres médias et comment l'émission était visuellement représentée (par des images, des liens vers des vidéos, des memes, etc.) ?
 
-Knowing the interesting relationship between the little representation, but high interaction level of tweets from verified accounts, we wanted to do a close reading of the top 20 liked tweets not only overall, but also from the top 20 non-verified accounts to see if these were different in the way they talked about the show and its history. We chose the top 20 because this seemed like a task we could actually manage within the time we had at our disposal.
+Connaissant la relation intéressante entre la faible représentation, mais les hauts niveaux d'interactions des tweets provenant de comptes vérifiés, nous voulions effectuer une lecture attentive des 20 tweets les plus "likés", non seulement pour tout le corpus, mais aussi les 20 tweets les plus "likés" émis par des comptes non vérifiés. Ceci afin de nous permettre de voir si l'on pouvait identifier des différences dans la manière dont ces tweets parlent de l'émission et de son histoire. Nous avons choisi le top 20 parce que cela correspondait à une tâche faisable compte tenu du temps dont nous disposions.
 
-If you were working on data from the National Gallery, you might want to select the top 5 or 10 most displayed or borrowed artworks from Danish and international artists, to further investigate their differences or commonalities doing a close reading of their artists, type of artwork, motive, content, size, a period in art history, etc.
+Si vous aviez travaillé avec les données de la Galerie Nationale, peut-être qu'une sélection du top 5 ou du top 10 des oeuvres les plus exposées ou les plus empruntées des artistes danois VS internationaux auraient suffi pour étudier plus en détail leurs différences et points communs via une lecture attentive des artistes, du type d'oeuvre, de la taille, du contenu, de la période historique, etc.
+
+## Exemple de sélection reproductible et systématique pour la lecture attentive à partir des données Twitter 
 
 ___
 
