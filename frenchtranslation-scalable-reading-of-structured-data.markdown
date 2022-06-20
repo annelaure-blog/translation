@@ -320,6 +320,13 @@ La visualisation ressemble fortement au graphique en barres précédent, mais la
 
 # Etape 3 Sélection reproductible et systématique de points de données pour la lecture attentive
 
+L'un des avantages à combiner la lecture attentive (*close reading*) avec la lecture distante (*distant reading*) est la possibilité d'effectuer des sélections systématiques et reproductibles de points de données pour la lecture attentive. Une fois l'exploration de votre jeu de données effectuée au moyen de deux types de lectures distances (étape 1 et étape 2), vous pouvez utiliser ces informations pour sélectionner de manière systématique des points de données pour une lecture plus attentive. Cette démarche vous permet d'explorer plus en détail les tendances de vos données, d'analyser un phénomène précis ou d'autres points d'intérêts que vous souhaitez examiner plus en profondeur.
+
+Le nombre de points de données choisis pour la lecture attentive va dépendre du phénomène sur lequel vous enquêtez, de combien de temps vous disposez et de la complexité générale des données. Par exemple, analyser une par une des productions artistiques peut prendre beaucoup plus de temps que la lecture individuelle de tweets, mais bien entendu cela dépend de votre objectif. Il est donc important d'être systématique dans la sélection de points de données afin de rester conforme à vos questions de recherche. Dans notre cas, nous souhaitions en savoir plus sur comment les tweets les plus "likés" représentent Sesame Street ; comment ils parlent de l'émission et de son histoire, s'ils contiennent des liens vers d'autres médias et comment l'émission était visuellement représentée (par des images, des liens vers des vidéos, des memes, etc.) ?
+
+Knowing the interesting relationship between the little representation, but high interaction level of tweets from verified accounts, we wanted to do a close reading of the top 20 liked tweets not only overall, but also from the top 20 non-verified accounts to see if these were different in the way they talked about the show and its history. We chose the top 20 because this seemed like a task we could actually manage within the time we had at our disposal.
+
+If you were working on data from the National Gallery, you might want to select the top 5 or 10 most displayed or borrowed artworks from Danish and international artists, to further investigate their differences or commonalities doing a close reading of their artists, type of artwork, motive, content, size, a period in art history, etc.
 
 ___
 
