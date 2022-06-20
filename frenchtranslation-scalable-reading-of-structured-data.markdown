@@ -353,6 +353,25 @@ En regardant la colonne "favorite_count", vous pouvez observer combien de "likes
 Comme vous le savez maintenant, la valeur minimale de "favorite_count" est de 50, vous pouvez ajouter une deuxième fonction `filter` à notre morceau de code précédent afin de retenir seulement les lignes avec une valeur "favorite_count" supérieure à 50. 
 Maintenant que vous avez le top 20 des tweets les plus likés, vous pouvez créer un nouveau jeu de données appelé *sesamestreet_data_favorite_count_over_50*.
 
+    sesamestreet_data %>% 
+      filter(is_retweet == FALSE) %>%
+      filter(favorite_count > 50) %>% 
+      arrange(desc(favorite_count)) -> sesamestreet_data_favorite_count_over_50
+  
+### Inspecter notre nouveau tableau de données
+
+Pour créer une vue d'ensemble rapide de notre nouveau jeu de données, utilisons la fonction `select` du paquet dplyr pour isoler les variables à inspecter. Dans ce cas, nous souhaitons isoler les colonnes favorite_count, screen_name, verified et text.
+
+To create a quick overview of your new dataset, you use the select-function from the dplyr-package to isolate the variables you wish to inspect. In this case, you wish to isolate the columns favorite_count, screen_name, verified and text.
+
+    sesamestreet_data_favorite_count_over_50 %>% 
+      select(favorite_count, screen_name, verified, text) %>% 
+      arrange(desc(favorite_count)) (Output removed because of privacy reasons) 
+      
+Vous pouvez ensuite les classer par la valeur "favorite_count" en utilisant la fonction `arrange`.
+Ce morceau de code retourne un tableau de données contenant les valeurs déjà évoquées. Il est plus facile à inspecter que si l'on regardait l'ensemble du jeu de données sesamestreet_data_favorite_count_over_50 dans notre Environnement Global.
+
+
 ___
 
 # Références
