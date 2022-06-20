@@ -346,16 +346,13 @@ La fonction `filter` et la fonction `arrange` proviennent toutes les deux du paq
       
 Comme vous pouvez le voir dans l'Environnement Global, votre jeu de données *sesamestreet_data* a un total de 2435 observations (ce nombre va varier en fonction de la date et de la durée de collecte des données). Après avoir exécuté ce morceau de code, vous pouvez maintenant lire dans votre tableau de données combien de tweets unique votre jeu de données contient. Dans notre exemple, c'était 852, mais cela peut varier en fonction de vos données.
 
-En regardant la colonne "favorite_count", vous pouvez observer combien de "likes" totalise votre top 20. Dans notre exemple, le top 2à avait un décompte de plus de 50. Ces nombres sont des variables qui changeront lorsque vous reproduirez l'expérience par vous-mêmes. Assurez-vous de bien vérifier ces nombres.
+En regardant la colonne "favorite_count", vous pouvez observer combien de "likes" totalise votre top 20. Dans notre exemple, le top 20 a pour valeur minimale de "likes" 50. Ces nombres sont des variables qui changeront lorsque vous reproduirez l'expérience par vous-mêmes. Assurez-vous de bien vérifier ces nombres.
 
 ### Créer un nouveau jeu de données du TOP 20 des tweets les plus likés des comptes vérifiés et non vérifiés
 
-Creating a new dataset of the top 20 most liked tweets (verified and non-verfied accounts)
-creating-a-new-dataset-of-the-top-20-most-liked-tweets-verified-and-non-verfied-accounts
+Comme vous le savez maintenant, la valeur minimale de "favorite_count" est de 50, vous pouvez ajouter une deuxième fonction `filter` à notre morceau de code précédent afin de retenir seulement les lignes avec une valeur "favorite_count" supérieure à 50. 
+Maintenant que vous avez le top 20 des tweets les plus likés, vous pouvez créer un nouveau jeu de données appelé *sesamestreet_data_favorite_count_over_50*.
 
-As you now know that the minimum “favorite_count” value is 50, you add a second filter-function to our previous code chunk which retains all rows with a “favorite_count” value over 50.
-
-As you have now captured the top 20 most liked tweets, you can now create a new dataset called sesamestreet_data_favorite_count_over_50.
 ___
 
 # Références
