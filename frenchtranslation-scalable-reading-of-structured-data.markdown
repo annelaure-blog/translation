@@ -331,6 +331,17 @@ Si vous aviez travaillé avec les données de la Galerie Nationale, peut-être q
 
 ## Exemple de sélection reproductible et systématique pour la lecture attentive à partir des données Twitter 
 
+Dans cet exemple vous vous intéressez à la sélection du Top 20 des tweets les plus "likés" pour l'ensemble du corpus. Sachant que beaucoup de ces tweets proviennent probablement de comptes vérifiés, vous souhaitez également sélectionner le TOP 20 des tweets issus de comptes non vérifiés afin de pouvoir comparer ces deux catégories.
+Pour examiner les tweets originaux seulement, vous commencez par exclure les tweets qui sont des "retweets".
+Dans le coin supérieur droit de l'interface du Studio R, vous trouverez "l'Environnement global" de R (*Global environment*) contenant le tableau de données *sesamestreet_data*. En cliquant sur le tableau de données, vous serez capables de voir les lignes et les colonnes contenant les données twitter. En regardant la colonne "is_retweet", vous verrez que cette colonne indique si le tweet est un retweet ou non par les valeurs TRUE ou FALSE.
+
+En retournant dans votre R Markdown, le document dans lequel vous écrivez votre code, vous êtes maintenant en mesure d'utiliser la fonction de `filter` afin de retenir uniquement les lignes pour lesquelles on sait que le tweet n'est pas un retweet. R-Markdown est un format de fichier qui supporte à la fois le code R et le texte. Vous pouvez ensuite classer les tweets restant en fonction du nombre de "like", que l'on trouve dans la colonne "favorite_count".
+
+La fonction `filter` et la fonction `arrange` proviennent toutes les deux du paquet dplyr, qui fait partie de tidyverse.
+
+    sesamestreet_data %>% 
+      filter(is_retweet == FALSE) %>% 
+      arrange(desc(favorite_count)) (Output removed because of privacy reasons) 
 ___
 
 # Références
