@@ -55,7 +55,7 @@ avatar_alt: Description de l'image de la leçon
          - [Créer un nouveau jeu de données du top 20 des tweets les plus likés](#Créer-un-nouveau-jeu-de-données-du-top-20-des-tweets-les-plus-likés)
          - [Inspecter notre nouveau tableau de données](#Inspecter-notre-nouveau-tableau-de-données)
          - [Exporter le nouveau jeu de données en fichier JSON](#Exporter-le-nouveau-jeu-de-données-en-fichier-JSON)
-- [Conclusion : poursuivre avec la lecture attentive](#Conclusion-:-poursuivre-avec-la-lecture-attentive)
+- [Conclusion poursuivre avec la lecture attentive](#Conclusion-poursuivre-avec-la-lecture-attentive)
 - [Conseils pour le travail avec les données Twitter](#Conseils-pour-le-travail-avec-les-données-Twitter)
 
 
@@ -426,9 +426,8 @@ A nouveau vous avez la possibilité de créer une rapide vue d'ensemble de votre
 
 A nouveau nous utilisons la fonction `toJSON` pour exporter nos données dans un fichier local JSON.
 
-    Top_21_liked_tweets_non_verified <- jsonlite::toJSON(sesamestreet_data_favorite_count_over_15_non_verified)
-
-    write(Top_21_liked_tweets_non_verified, "Top_21_liked_tweets_non_verified.json")
+     Top_21_liked_tweets_non_verified <- jsonlite::toJSON(sesamestreet_data_favorite_count_over_15_non_verified)
+     write(Top_21_liked_tweets_non_verified, "Top_21_liked_tweets_non_verified.json")
 
 Vous devriez maintenant avoir deux fichiers JSON stockés dans votre répertoire désigné, prêt à être chargés dans une autre fenêtre R Markdown pour une lecture attentive. Vous pouvez aussi inspecter les colonnes de texte du jeu de données dans l'environnement global R.
 Vous êtes maintenant en mesure de copier les URLs du tableau de données pour inspecter les tweets individuellement sur twitter. Rappelez-vous de bien relire les conditions générales de Twitter et d'agir en les respectant. Ces conditions générale stipulent par exemple que vous n'êtes pas autorisé à partager votre jeu de données avec d'autres, à l'exception d'une liste d'ID de tweets. Il est également précisé que le matching de comptes twitter et d'individus s'effectuant hors de Twitter doivent respecter des règles très strictes et comporte de nombreuses limites. Enfin vous êtes également restreints si vous souhaitez publier vos données ou citer des tweets, etc.
