@@ -440,7 +440,22 @@ Pour déterminer cela, il est nécessaire d'effectuer une lecture attentive et d
 
 # Tips for working with Twitter Data
 
+Comme évoqué au début de cette leçon, il y a différentes manières d'obtenir vos données. Cette section peut vous aider à utiliser le code de cette leçon sur des données n'ayant pas été collectés avec le paquet `rtweet`.
+Si vous avez collecté vos données en suivant la leçon [Guide du débutant pour les données twitter](https://programminghistorian.org/en/lessons/beginners-guide-to-twitter-data), vous découvrirez que la date des tweets est affichée d'une manière qui n'est pas compatible avec le code de cette leçon. Pour rendre le code compatible avec les données de la leçon [Guide du débutant pour les données twitter](https://programminghistorian.org/en/lessons/beginners-guide-to-twitter-data), la colonne "date" doit être manipulée avec des expressions régulières. Ces dernières sont assez complexes et utilisées pour dire à l'ordinateur quelle partie du texte de la colonne doit être comprise comme un jour, un mois, une année et une heure.
 
+    df %>% 
+      mutate(date = str_replace(created_at, "^[A-Z][a-z]{2} ([A-Z][a-z]{2}) (\\d{2}) (\\d{2}:\\d{2}:\\d{2}) \\+0000 (\\d{4})",
+                             "\\4-\\1-\\2 \\3")) %>% 
+      mutate(date = ymd_hms(date)) %>% 
+     select(date, created_at, everything())
+    df$Time <- format(as.POSIXct(df$date,format="%Y-%m-%d %H:%M:%S"),"%H:%M:%S")
+    df$date <- format(as.POSIXct(df$date,format="%Y.%m-%d %H:%M:%S"),"%Y-%m-%d")
+
+D'autres colonnes qui n'ont pas les mêmes noms dans nos données que dans les données collectées via la leçon "Guide du débutant pour les données twitter" sont les colonnes "verified" et "text" qui sont nommées "user.verified" et "full_text". Ici vous avez deux options : soit changer le code, afin qu'il soit écrit partout "verified" ou "text" ou "user.verified" et "full_text". Une autre approche consiste à changer les noms des colonnes dans le tableau de données, ce qui peut être fait via le code suivant : 
+
+    df %>% 
+     rename(verified = user.verified) %>% 
+     rename(text = full_text) -> df
 ___
 
 # Références
