@@ -386,11 +386,11 @@ Afin de vous assurer que vos données sont stockées de la manière la plus gér
 3. Si les tweets proviennent de tous les types de comptes ou juste les comptes vérifiés
 4. L'année de production des données
 
-    Top_20_liked_tweets <- jsonlite::toJSON(sesamestreet_data_favorite_count_over_50)
+       Top_20_liked_tweets <- jsonlite::toJSON(sesamestreet_data_favorite_count_over_50)
 
 Après avoir converti vos données au format JSON, vous êtes en mesure d'utiliser la fonction `write` de base dans R pour exporter les données et les sauvegarder sur votre machine.
 
-    write(Top_20_liked_tweets, "Top_20_liked_tweets.json")
+       write(Top_20_liked_tweets, "Top_20_liked_tweets.json")
     
 ### Créer un nouveau jeu de données du top 20 des tweets les plus likés
 
