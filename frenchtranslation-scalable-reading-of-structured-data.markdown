@@ -52,7 +52,8 @@ avatar_alt: Description de l'image de la leçon
          - [Créer un nouveau jeu de données du TOP 20 des tweets les plus likés des comptes vérifiés et non vérifiés](#Créer-un-nouveau-jeu-de-données-du-TOP-20-des-tweets-les-plus-likés-des-comptes-vérifiés-et-non-vérifiés)
          - [Inspecter notre nouveau tableau de données](#Inspecter-notre-nouveau-tableau-de-données)
          - [Exporter le nouveau jeu de données dans un fichier JSON](#Exporter-le-nouveau-jeu-de-données-dans-un-fichier-JSON)
-         - [Créer un nouveau jeu de données du top 20 des tweets les plus likés (comptes non vérifiés seulement)](#Créer-un-nouveau-jeu-de-données-du-top-20-des-tweets-les-plus-likés-(comptes-non-vérifiés-seulement)
+         - [Créer un nouveau jeu de données du top 20 des tweets les plus likés - comptes non vérifiés seulement)](#Créer-un-nouveau-jeu-de-données-du-top-20-des-tweets-les-plus-likés-(comptes-non-vérifiés-seulement))
+         - [Inspecter notre nouveau tableau de données - non vérifiés seulement](#Inspecter-notre-nouveau-tableau-de-données-non-vérifiés-seulement)
 
 
 
@@ -396,6 +397,29 @@ Vous souhaitez maintenant voir le Top 20 des tweets les plus likés par les comp
       filter(is_retweet == FALSE) %>%
       filter(verified == FALSE) %>% 
       arrange(desc(favorite_count)) (Output removed because of privacy reasons)
+      
+Pour cela, vous suivez le même mode opératoire que précedemment, mais dans notre premier bloc de code, nous incluons un filtre supplémentaire `filter` depuis le paquet dyplr, qui ne retient que les lignes avec les valeurs "false" (faux) dans la colonne "vérified" (vérifiés). Ceci exclue tous les tweets produits par des comptes vérifiés de vos données.
+Ici vous pouvez observer combien, sur le total de 2435 tweets n'étant pas des retweets, ont été créés par des comptes non vérifiés. Dans notre exemple, ce nombre était de 809. Ce nombre va différer dans votre cas.
+
+En observant à nouveau la colonne "favorite_count", il vous faut maintenant chercher le tweet numéro 20 des tweets les plus likés Observez combien de likes ce tweet a, puis paramétrez "favorite_count" sur cette valeur. Dans notre exemple, le top 20 des tweets issus de comptes non vérifiés a un compte (de like) au dessus de 15. Cette fois, deux tweets sont à la 20ème et 21ème place. Dans ce cas, vous allez jusqu'aux 21 tweets les plus likés pour cette analyse.
+
+    sesamestreet_data %>% 
+      filter(is_retweet == FALSE) %>%
+      filter(verified == FALSE) %>%
+      filter(favorite_count > 15) %>% 
+      arrange(desc(favorite_count)) -> sesamestreet_data_favorite_count_over_15_non_verified
+      
+Vous pouvez à présent filtrer les tweets qui ont été likés plus que 15 fois, puis les afficher du plus au moins liké, et créer un nouveau jeu de données dans notre Environnement Global, nommé sesamestreet_data_favorite_count_over_15_non_verified.
+
+### Inspecter notre nouveau tableau de données - non vérifiés seulement
+
+A nouveau vous avez la possibilité de créer une rapide vue d'ensemble de votre nouveau jeu de données en utilisant les fonctions `select` et `arrange`, puis d'inspecter les valeurs choisies dans le tableau de données retourné.
+
+    sesamestreet_data_favorite_count_over_15_non_verified %>% 
+      select(favorite_count, screen_name, verified, text) %>% 
+      arrange(desc(favorite_count)) <span style="color: green">(Output removed because of privacy reasons)</span>
+
+
 ___
 
 # Références
