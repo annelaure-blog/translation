@@ -418,6 +418,24 @@ A nouveau vous avez la possibilité de créer une rapide vue d'ensemble de votre
     sesamestreet_data_favorite_count_over_15_non_verified %>% 
       select(favorite_count, screen_name, verified, text) %>% 
       arrange(desc(favorite_count)) <span style="color: green">(Output removed because of privacy reasons)</span>
+      
+### Exporter le nouveau jeu de données en fichier JSON
+
+A nouveau nous utilisons la fonction `toJSON` pour exporter nos données dans un fichier local JSON.
+
+    Top_21_liked_tweets_non_verified <- jsonlite::toJSON(sesamestreet_data_favorite_count_over_15_non_verified)
+
+    write(Top_21_liked_tweets_non_verified, "Top_21_liked_tweets_non_verified.json")
+
+Vous devriez maintenant avoir deux fichiers JSON stockés dans votre répertoire désigné, prêt à être chargés dans une autre fenêtre R Markdown pour une lecture attentive. Vous pouvez aussi inspecter les colonnes de texte du jeu de données dans l'environnement global R.
+Vous êtes maintenant en mesure de copier les URLs du tableau de données pour inspecter les tweets individuellement sur twitter. Rappelez-vous de bien relire les conditions générales de Twitter et d'agir en les respectant. Ces conditions générale stipulent par exemple que vous n'êtes pas autorisé à partager votre jeu de données avec d'autres, à l'exception d'une liste d'ID de tweets. Il est également précisé que le matching de comptes twitter et d'individus s'effectuant hors de Twitter doivent respecter des règles très strictes et comporte de nombreuses limites. Enfin vous êtes également restreints si vous souhaitez publier vos données ou citer des tweets, etc.
+
+# Conclusion : poursuivre avec la lecture attentive
+
+Quand vous avez sélectionné les points de données individuels à examiner de manière plus attentive (étape 3), les étapes initiales d'exploration via la lecture distante (étapes 1 et 2) peuvent être utilisées en combinaison pour constituer un contexte hautement qualifié pour nourrir l'analyse plus détaillée. En retournant à l'exploration chronologique (étape 1), vous saurez où se situent les points de données vous avez sélectionnés pour analyser individuellement se situent dans le jeu de données global et serez en mesure de considérer l'impact de cette information sur votre analyse. Par exemple, ces points de données sont-ils situés parmi les premiers ou les derniers tweets de la distribution ? 
+
+ you will know where the data points you have selected to analyze individually are located in the overall dataset and be able to consider what difference it might make to your reading; are they, for instance, locate early or late compared to the overall data distribution? Part of a spike? And what does that mean? With regards to the binary structures (step 2), the distant reading can help to determine if an individual data point is an outlier or representative of a larger trend in the data, as well as how large a portion of the dataset it represents in relation to a given feature. In the example using Twitter data, the close reading of selected data points might be contextualized by the distant reading in the following way: The chronological exploration can help determine how the 20 tweets selected for close reading are located in relation to an event you might be interested. Maybe a tweet is posted early compared to the majority indicating it was, perhaps, part of a ‘first take’ on a certain issue. Or if it could be considered a ‘late’ post, maybe indicating a more retrospective take on an issue. To determine this, you have to close read and analyze the selected tweets using traditional ‘humanities’ methods, but the distant reading can help you qualify and contextualize your analysis. The same with the binary structures and the criteria used for selecting the top 20 liked tweets. Knowing whether a tweet came from a verified account or not, and if it was one of the most liked, you can compare this to the overall trends regarding these parameters in the overall dataset when you do your close reading. This will help you qualify your argument in the in-depth analysis of the single data point because you know what it represents in relation to the overall event, discussion, or issue you are investigating.
+Conclusion: moving on with close reading
 
 
 ___
