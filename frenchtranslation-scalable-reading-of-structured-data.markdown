@@ -52,8 +52,8 @@ avatar_alt: Description de l'image de la leçon
          - [Créer un nouveau jeu de données du TOP 20 des tweets les plus likés des comptes vérifiés et non vérifiés](#Créer-un-nouveau-jeu-de-données-du-TOP-20-des-tweets-les-plus-likés-des-comptes-vérifiés-et-non-vérifiés)
          - [Inspecter notre nouveau tableau de données](#Inspecter-notre-nouveau-tableau-de-données)
          - [Exporter le nouveau jeu de données dans un fichier JSON](#Exporter-le-nouveau-jeu-de-données-dans-un-fichier-JSON)
-         - [Créer un nouveau jeu de données du top 20 des tweets les plus likés - comptes non vérifiés seulement)](#Créer-un-nouveau-jeu-de-données-du-top-20-des-tweets-les-plus-likés-(comptes-non-vérifiés-seulement))
-         - [Inspecter notre nouveau tableau de données - non vérifiés seulement](#Inspecter-notre-nouveau-tableau-de-données-non-vérifiés-seulement)
+         - [Créer un nouveau jeu de données du top 20 des tweets les plus likés](#Créer-un-nouveau-jeu-de-données-du-top-20-des-tweets-les-plus-likés)
+         - [Inspecter notre nouveau tableau de données](#Inspecter-notre-nouveau-tableau-de-données)
 
 
 
@@ -389,7 +389,7 @@ Après avoir converti vos données au format JSON, vous êtes en mesure d'utilis
 
     write(Top_20_liked_tweets, "Top_20_liked_tweets.json")
     
-### Créer un nouveau jeu de données du top 20 des tweets les plus likés (comptes non vérifiés seulement)
+### Créer un nouveau jeu de données du top 20 des tweets les plus likés
 
 Vous souhaitez maintenant voir le Top 20 des tweets les plus likés par les comptes non vérifiés.
 
@@ -411,7 +411,7 @@ En observant à nouveau la colonne "favorite_count", il vous faut maintenant che
       
 Vous pouvez à présent filtrer les tweets qui ont été likés plus que 15 fois, puis les afficher du plus au moins liké, et créer un nouveau jeu de données dans notre Environnement Global, nommé sesamestreet_data_favorite_count_over_15_non_verified.
 
-### Inspecter notre nouveau tableau de données - non vérifiés seulement
+### Inspecter notre nouveau tableau de données
 
 A nouveau vous avez la possibilité de créer une rapide vue d'ensemble de votre nouveau jeu de données en utilisant les fonctions `select` et `arrange`, puis d'inspecter les valeurs choisies dans le tableau de données retourné.
 
