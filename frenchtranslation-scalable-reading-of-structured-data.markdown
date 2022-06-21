@@ -55,7 +55,8 @@ avatar_alt: Description de l'image de la leçon
          - [Créer un nouveau jeu de données du top 20 des tweets les plus likés](#Créer-un-nouveau-jeu-de-données-du-top-20-des-tweets-les-plus-likés)
          - [Inspecter notre nouveau tableau de données](#Inspecter-notre-nouveau-tableau-de-données)
          - [Exporter le nouveau jeu de données en fichier JSON](#Exporter-le-nouveau-jeu-de-données-en-fichier-JSON)
-- [Conclusion : poursuivre avec la lecture attentive](#Conclusion-poursuivre-avec-la-lecture-attentive)
+- [Conclusion : poursuivre avec la lecture attentive](#Conclusion-:-poursuivre-avec-la-lecture-attentive)
+- [Conseils pour le travail avec les données Twitter](#Conseils-pour-le-travail-avec-les-données-Twitter)
 
 
 
@@ -438,7 +439,7 @@ Quand vous avez sélectionné les points de données individuels à examiner de 
 En considérant les structures binaires (étape 2), la lecture distante peut aider à déterminer si un point de donnée est une anomalie ou représentatif d'une tendance plus générale dans les données, et de déterminer la taille de la portion du jeu de données qu'il représente en relation avec un paramètre donné. Dans l'exemple utilisant les données Twitter, la lecture attentive de points de données sélectionnés peut être contextualisée par la lecture distance de la manière suivante : l'exploration chronologique aide à déterminer comment les 20 tweets sélectionnés pour la lecture attentive sont situés en relation avec un évènement considéré comme pertinent. Peut-être qu'un tweet a été posté plus tôt que les autres, indiquant une première réaction "à chaud" sur un sujet. Peut-être qu'un tweet est considéré comme "en retard" par rapport aux autres peut indiquer une perspective plus réfléchie sur un sujet.
 Pour déterminer cela, il est nécessaire d'effectuer une lecture attentive et d'analyser les tweets sélectionnés en recourant aux méthodes traditionnelles de sciences humaines et sociales, mais la lecture distante peut aider à qualifier et à contextualiser votre analyse. Le même raisonnement s'applique pour les structures binaires et les critères utilisés pour sélectionner le Top 20 des tweets les plus likés. Savoir si un tweet provient ou non d'un compte vérifié, et s'il a été l'un des plus likés, permet de comparer cela avec les tendances générales sur ces paramètres. Cela aide à qualifier et à argumenter la conduite de l'analyse détaillée d'un seul point de données, car vous savez ce qu'il représente en relation avec le sujet général que vous étudiez.
 
-# Tips for working with Twitter Data
+# Conseils pour le travail avec les données Twitter 
 
 Comme évoqué au début de cette leçon, il y a différentes manières d'obtenir vos données. Cette section peut vous aider à utiliser le code de cette leçon sur des données n'ayant pas été collectés avec le paquet `rtweet`.
 Si vous avez collecté vos données en suivant la leçon [Guide du débutant pour les données twitter](https://programminghistorian.org/en/lessons/beginners-guide-to-twitter-data), vous découvrirez que la date des tweets est affichée d'une manière qui n'est pas compatible avec le code de cette leçon. Pour rendre le code compatible avec les données de la leçon [Guide du débutant pour les données twitter](https://programminghistorian.org/en/lessons/beginners-guide-to-twitter-data), la colonne "date" doit être manipulée avec des expressions régulières. Ces dernières sont assez complexes et utilisées pour dire à l'ordinateur quelle partie du texte de la colonne doit être comprise comme un jour, un mois, une année et une heure.
