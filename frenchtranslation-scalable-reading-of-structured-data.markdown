@@ -49,7 +49,9 @@ avatar_alt: Description de l'image de la leçon
     - [Interaction avec les comptes vérifiés versus non vérifiés](#Interaction-avec-les-comptes-vérifiés-versus-non-vérifiés)
 - [Etape 3 : Sélection reproductible et systématique de points de données pour la lecture attentive (*close reading*)](#Etape-3-Sélection-reproductible-et-systématique-de-points-de-données-pour-la-lecture-attentive)
     - [Exemple de sélection reproductible et systématique pour la lecture attentive à partir des données Twitter](#Exemple-de-sélection-reproductible-et-systématique-pour-la-lecture-attentive-à-partir-des-données-Twitter)  
-      - [Créer un nouveau jeu de données du TOP 20 des tweets les plus likés des comptes vérifiés et non vérifiés](#Créer-un-nouveau-jeu-de-données-du-TOP-20-des-tweets-les-plus-likés-des-comptes-vérifiés-et-non-vérifiés)
+         - [Créer un nouveau jeu de données du TOP 20 des tweets les plus likés des comptes vérifiés et non vérifiés](#Créer-un-nouveau-jeu-de-données-du-TOP-20-des-tweets-les-plus-likés-des-comptes-vérifiés-et-non-vérifiés)
+         - [Inspecter notre nouveau tableau de données](#Inspecter-notre-nouveau-tableau-de-données)
+         - [Exporter le nouveau jeu de données dans un fichier JSON](#Exporter-le-nouveau-jeu-de-données-dans-un-fichier-JSON)
 
 
 
@@ -360,9 +362,7 @@ Maintenant que vous avez le top 20 des tweets les plus likés, vous pouvez crée
   
 ### Inspecter notre nouveau tableau de données
 
-Pour créer une vue d'ensemble rapide de notre nouveau jeu de données, utilisons la fonction `select` du paquet dplyr pour isoler les variables à inspecter. Dans ce cas, nous souhaitons isoler les colonnes favorite_count, screen_name, verified et text.
-
-To create a quick overview of your new dataset, you use the select-function from the dplyr-package to isolate the variables you wish to inspect. In this case, you wish to isolate the columns favorite_count, screen_name, verified and text.
+Pour créer une vue d'ensemble rapide de notre nouveau jeu de données, utilisons la fonction `select` du paquet dplyr pour isoler les variables à inspecter. Dans ce cas, nous souhaitons isoler les colonnes favorite_count, screen_name, verified et text. 
 
     sesamestreet_data_favorite_count_over_50 %>% 
       select(favorite_count, screen_name, verified, text) %>% 
@@ -371,6 +371,7 @@ To create a quick overview of your new dataset, you use the select-function from
 Vous pouvez ensuite les classer par la valeur "favorite_count" en utilisant la fonction `arrange`.
 Ce morceau de code retourne un tableau de données contenant les valeurs déjà évoquées. Il est plus facile à inspecter que si l'on regardait l'ensemble du jeu de données sesamestreet_data_favorite_count_over_50 dans notre Environnement Global.
 
+### Exporter le nouveau jeu de données dans un fichier JSON
 
 ___
 
