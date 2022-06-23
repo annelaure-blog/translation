@@ -55,18 +55,17 @@ avatar_alt: Description de l'image de la leçon
          - [Créer un nouveau jeu de données du top 20 des tweets les plus likés](#Créer-un-nouveau-jeu-de-données-du-top-20-des-tweets-les-plus-likés)
          - [Inspecter notre nouveau tableau de données](#Inspecter-notre-nouveau-tableau-de-données)
          - [Exporter le nouveau jeu de données en fichier JSON](#Exporter-le-nouveau-jeu-de-données-en-fichier-JSON)
-- [Conclusion poursuivre avec la lecture attentive](#Conclusion-poursuivre-avec-la-lecture-attentive)
+- [Conclusion : poursuivre avec la lecture attentive](#Conclusion-poursuivre-avec-la-lecture-attentive)
 - [Conseils pour le travail avec les données Twitter](#Conseils-pour-le-travail-avec-les-données-Twitter)
-
-
+- [Références](#Références)
 
 
 # Objectifs de la leçon 
 
 Une fois cette leçon complétée, les lecteurs seront en mesure de :
- * configurer un processus de travail où la lecture exploratoire distante est utilisée en tant que contexte pour guider la sélection de points de données en vue d'une lecture attentive
+ * configurer un processus de travail où la lecture exploratoire distante est utilisée en tant que contexte pour guider la sélection de points de données en vue d'une lecture attentive 
  * faire appel aux analyses exploratoires pour identifier des schémas au sein de données structurées
- * appliquer et combiner des filtres de base et ajuster les fonctions dans R (si vous n'avez pas ou peu de connaissances de R, nous recommandons de consulter la leçon ["Les bases de R avec des données tabulaires"](https://programminghistorian.org/en/lessons/r-basics-with-tabular-data))
+ * appliquer et combiner des filtres de base et ajuster les fonctions dans R (si vous n'avez pas ou peu de connaissances de R, nous recommandons de consulter la leçon ["Les bases de R avec des données tabulaires"](https://programminghistorian.org/en/lessons/r-basics-with-tabular-data))(en anglais).
 
 
 # Structure de la leçon
@@ -76,17 +75,17 @@ Cette leçon est structurée en deux cheminements parallèles :
 * un cheminement général qui suggère une façon de travailler analytiquement avec des données structurées où la lecture distante d'un grand jeu de données est 
 utilisée comme contexte pour une lecture attentive de points de données distincts ;
 * un cheminement basé sur un exemple dans lequel nous utilisons des fonctions simples du language de programmation R pour analyser des données Twitter.
-En combinant ces deux cheminements, nous montrons comment la lecture extensible peut être employée pour analyser une large variété de données structurées.
+En combinant ces deux cheminements, nous montrons comment la lecture évolutive peut être employée pour analyser une large variété de données structurées.
 Notre processus de travail évolutif suggéré inclus deux types de lectures distantes qui peuvent aider à explorer et analyser les caractéristiques globales de grands jeux de données (chronologiquement et en relation avec des structures binaires), en plus de permettre l'utilisation de la lecture distante pour sélectionner des points de données individuels pour une lecture attentive (*close reading*) de manière systématique et reproductible.
 
 # La lecture évolutive, une introduction aux méthodes digitales pour les débutants
 
-La combinaison de lecture distante (*distant reading*) et de lecture attentive (*close reading*) introduites dans cette leçon est entendue comme une introduction aux méthodes digitales pour les étudiants et les chercheurs qui débutent dans l'incorporation du raisonnement computationnel à leur travail. En connectant la lecture distante de grands jeux de données à la lecture attentive de points de données individuels, vous créez un pont entre les méthodes computationnelles et les méthodes de curation manuelles communément employées dans les humanités. De notre expérience, la lecture évolutive (*scalable reading*) - où l'analyse d'un jeu de données entier représente un ensemble de contextes pour la lecture attentive - prévient les difficultés que les personnes débutantes peuvent rencontrer en interrogeant leur matériel qui peut être exploré via le raisonnement computationnel. La manière reproductible de sélectionner chaque cas individuellement pour un examen approfondi éclaire, par exemple, les questions centrales au sein de disciplines comme l'histoire et la sociologie concernant les relations entre un contexte général et un cas d'étude particulier, mais peut aussi être utile à d'autres disciplines des humanités qui travaillent avec des cadres analytiques similaires. 
+La combinaison de lecture distante (*distant reading*) et de lecture attentive (*close reading*) introduites dans cette leçon est entendue comme une introduction aux méthodes digitales pour les étudiants et les chercheurs qui débutent dans l'incorporation du raisonnement computationnel à leur travail. En connectant la lecture distante de grands jeux de données à la lecture attentive de points de données individuels, vous créez un pont entre les méthodes computationnelles et les méthodes de curation manuelles communément employées dans les humanités. D'après notre expérience, la lecture évolutive - où l'analyse d'un jeu de données entier représente un ensemble de contextes pour la lecture attentive - prévient les difficultés que les personnes débutantes peuvent rencontrer en interrogeant leur matériel via le raisonnement computationnel. La manière reproductible de sélectionner chaque cas individuellement pour un examen approfondi éclaire, par exemple, les questions centrales au sein de disciplines comme l'histoire et la sociologie concernant les relations entre un contexte général et un cas d'étude particulier, mais peut aussi être utile à d'autres disciplines des humanités qui travaillent avec des cadres analytiques similaires. 
 
 # La lecture évolutive
 
-Nous avons utilisé à l'origine le processus de travail présenté ci-dessous pour analyser les souvenirs que les enfants états-uniens ont du programme télévisé *Sesame Street* sur Twitter. Nous avons utilisé une combinaison de lecture attentive (*close reading*) et de lecture distante (*distant reading*) pour découvrir comment certains évènements ont généré des discussions sur l'histoire de *Sesame Street*, quels utilisateurs de Twitter dominaient le discours à propos de l'histoire de *Sesame Street*, et quels parties de l'histoire de l'émission étaient mises en exergue. Notre exemple ci-dessous utilise un petit jeu de données en lien avec les tweets concernant *Sesame Street*. Toutefois, le même cadre analytique peut être utilisé pour analyser de nombreux autres types de données structurées.
-Afin de démontrer l'applicabilité du processus de travail sur d'autres types de données, nous abordons comment ce dernier pourrait être appliqué à des ensembles de données structurées depuis les collections numérisées de la Galerie Nationale du Danemark. Les données de la Galerie Nationale sont très différentes des données Twitter utilisées dans l'exemple, mais l'idée d'utiliser la lecture distante pour contextualiser un travail de lecture attentive s'applique aussi bien avec des données Twitter.
+Nous avons utilisé à l'origine le processus de travail présenté ci-dessous pour analyser les souvenirs que les enfants états-uniens ont du programme télévisé *Sesame Street* sur Twitter. Nous avons utilisé une combinaison de lecture attentive (*close reading*) et de lecture distante (*distant reading*) pour découvrir comment certains évènements ont généré des discussions sur l'histoire de *Sesame Street*, quels utilisateurs de Twitter dominaient le discours à propos de l'histoire de *Sesame Street*, et quelles parties de l'histoire de l'émission étaient mises en exergue. Notre exemple ci-dessous utilise un petit jeu de données en lien avec les tweets concernant *Sesame Street*. Toutefois, le même cadre analytique peut être utilisé pour analyser de nombreux autres types de données structurées.
+Afin de démontrer l'applicabilité du processus de travail sur d'autres types de données, nous abordons comment ce dernier pourrait être appliqué à des ensembles de données structurées depuis les collections numérisées de la Galerie Nationale du Danemark. Les données de la Galerie Nationale sont très différentes des données Twitter utilisées dans l'exemple, mais l'idée d'utiliser la lecture distante pour contextualiser un travail de lecture attentive s'applique aussi bien qu'avec des données Twitter.
 
 Le processus de travail pour la lecture évolutive de données structurées que nous proposons ci-dessous se présente en trois étapes :
 
@@ -98,12 +97,12 @@ Ci-dessous, les trois étapes sont expliquées en des termes généraux mais aus
 
 # Données et prérequis
 
-Si vous souhaitez reproduire l'analyse que nous présentons ci-dessous, en utilisant pas seulement le cadre conceptuel de travail mais aussi le code, nous partons du principe que vous avez déjà à disposition un jeu de données contenant des données Twitter au format JSON. Si ce n'est pas le cas, vous pouvez vous en acquérir un par les méthodes suivantes :
+Si vous souhaitez reproduire l'analyse que nous présentons ci-dessous, en utilisant non seulement le cadre conceptuel de travail mais aussi le code, nous partons du principe que vous avez déjà à disposition un jeu de données contenant des données Twitter au format JSON. Si ce n'est pas le cas, vous pouvez vous en acquérir un par les méthodes suivantes :
 
-1. Utiliser l'une des APIs de Twitter, c'est-à-dire leur API dite "Essentielle" (*Essential*) que nous avons utilisé pour récupérer le jeu de données utilisé dans l'exemple (pour en savoir plus sur les APIs, vous pouvez consulter [cette section de la leçon sur l'introduire et peupler un site web avec des données API](https://programminghistorian.org/en/lessons/introduction-to-populating-a-website-with-api-data#what-is-application-programming-interface-api)(en anglais). Ce lien vous mènera [aux options API de Twitter](https://developer.twitter.com/en/docs/twitter-api/getting-started/about-twitter-api). Vous pouvez utiliser le paquet 'rtweet' , avec vos propres identifiants Twitter pour accéder à l'API Twitter via R, comme décrit ci-dessous.
-2. Utiliser notre [guide pour débutants sur les données Twitter](https://programminghistorian.org/en/lessons/beginners-guide-to-twitter-data) par Programming Historian. Choisissez plutôt un export en JSON au lieu du CSV.
+1. Utiliser l'une des APIs de Twitter, c'est-à-dire leur API dite "Essentielle" (*Essential*) que nous avons utilisé pour récupérer le jeu de données utilisé dans l'exemple (pour en savoir plus sur les APIs, vous pouvez consulter [cette section de la leçon sur introduire et peupler un site web avec des données API](https://programminghistorian.org/en/lessons/introduction-to-populating-a-website-with-api-data#what-is-application-programming-interface-api)(en anglais). Ce lien vous mènera [aux options API de Twitter](https://developer.twitter.com/en/docs/twitter-api/getting-started/about-twitter-api). Vous pouvez utiliser le paquet 'rtweet' , avec vos propres identifiants Twitter pour accéder à l'API Twitter via R, comme décrit ci-dessous.
+2. Utiliser notre [guide pour débutants sur les données Twitter](https://programminghistorian.org/en/lessons/beginners-guide-to-twitter-data) par Programming Historian. Choisissez de préférence un export en JSON au lieu du CSV.
 
-Dans R, vous travaillez avec des paquets (*packages*), chacun ajoutant des fonctionnalités aux fonctions de base de R. Les paquets sont souvent créés de manière communautaire et rendus disponibles à la réutilisation. En recourant aux paquets, nous vous tenez sur les épaules d'autres codeurs. Dans cet exemple, les paquets que nous allons utiliser sont les suivants : rtweet, tidyverse, libridate et jsonlite. Pour installer ces paquets dans R, consultez [cette section de la leçon sur le traitement de texte basique dans R](https://programminghistorian.org/en/lessons/basic-text-processing-in-r#package-set-up) (en anglais). Pour utiliser les paquets dans R, il faut les charger via la fonction `library()` comme ci-dessous :
+Dans R, vous travaillez avec des paquets (*packages*), chacun ajoutant des fonctionnalités aux fonctions de base de R. Les paquets sont souvent créés de manière communautaire et rendus disponibles à la réutilisation. En recourant aux paquets, vous vous tenez sur les épaules d'autres codeurs. Dans cet exemple, les paquets que nous allons utiliser sont les suivants : rtweet, tidyverse, libridate et jsonlite. Pour installer ces paquets dans R, consultez [cette section de la leçon sur le traitement de texte basique dans R](https://programminghistorian.org/en/lessons/basic-text-processing-in-r#package-set-up) (en anglais). Pour utiliser les paquets dans R, il faut les charger via la fonction `library()` comme ci-dessous :
 
     library(rtweet)
     library(tidyverse)
@@ -126,14 +125,14 @@ Si vous êtes déjà en possession d'un fichier json contenant vos données twit
 ## rtweet
 Le paquet "rtweet" est une implémentation d'appels destinés à collecter et à organiser des données Twitter via l'API REST et l'API stream de Twitter, qui se trouve à l'adresse suivante : [https://developer.twitter.com/en/docs](https://developer.twitter.com/en/docs) <sub>[4](#Références)</sub>
 
-Si vous avez déjà acquis des données Twitter et que vous souhaitez suivre les exemples de code à suivre étape par étape, vous pouvez utiliser votre compte twitter et la fonction `search_tweets()` du paquet 'rtweet', pour importer vos données twitter dans votre environnement R. Cette opération va retourner jusqu'à 18 000 tweets datant des 10 derniers jours. Les données vont être structurées en tableau de données (*dataframe*). Tout comme une feuille de calcul, un tableau de données organise vos données en un tableau à deux dimensions avec des lignes et des colonnes. En copiant le code ci-dessous, vous serez capable de générer un tableau de données basé sur une recherche textuelle libre du terme "sesamestreet" pour suivre notre exemple. Le paramètre q représente votre requête. C'est à cette place qu'il faut taper le contenu qui vous intéresse. Le paramètre n indique le nombre de tweets à retourner.
+Si vous avez déjà acquis des données Twitter et que vous souhaitez suivre les exemples de code étape par étape, vous pouvez utiliser votre compte twitter et la fonction `search_tweets()` du paquet 'rtweet', pour importer vos données twitter dans votre environnement R. Cette opération va retourner jusqu'à 18 000 tweets datant des 10 derniers jours. Les données vont être structurées en tableau de données (*dataframe*). Tout comme une feuille de calcul, un tableau de données organise vos données en un tableau à deux dimensions avec des lignes et des colonnes. En copiant le code ci-dessous, vous serez capable de générer un tableau de données basé sur une recherche textuelle libre du terme "sesamestreet" pour suivre notre exemple. Le paramètre q représente votre requête. C'est à cette place qu'il faut taper le contenu qui vous intéresse. Le paramètre n indique le nombre de tweets à retourner.
 
     sesamestreet_data <- search_tweets(q = "sesamestreet", n = 18000)
 
-# Etape 1 Exploration chronologique du jeu de données
+# Etape 1: Exploration chronologique du jeu de données
 
 Explorer les dimensions chronologiques d'un jeu de données peut faciliter la première analyse globale de vos données. Dans le cas où vous étudiez l'évolution d'un phénomène au cours du temps (comme notre intérêt autour des évènements précis ayant déclenché des discussions sur Sesame Street), comprendre comment ce phénomène a généré de l'attention et/ou comment cet intérêt diminue peut être révélateur de son importance. Cela peut constituer la première étape de compréhension de la manière dont les données collectées se rapportent au phénomène au cours du temps. L'intérêt pour la dispersion temporelle peut aussi se raporter non pas à un évènement mais plutôt à la distribution totale d'un jeu de données sur la base d'un ensemble de catégories.
-Par exemple, dans le cas où vous travaillez avec les données de la Galerie Nationale, il peut s'avérer utile d'explorer la distribution de ses collections en fonction des différentes périodes d'histoire de l'art afin d'établir quelles périodes sont les mieux représentées dans le jeu de données de la Galerie Nationale. Connaître la dispersion temporelle de l'ensemble du jeu de données aide à contextualiser les points de données individuels sélectionnés pour une lecture attentive à l'étape 3 en cela qu'elle donne une idée de la relation spécifique entre le point de donnée et la chronologie du jeu de données entier, en comparaison de tous les autres points de données.
+Par exemple, dans le cas où vous travaillez avec les données de la Galerie Nationale, il peut s'avérer utile d'explorer la distribution des collections en fonction des différentes périodes d'histoire de l'art afin d'établir quelles périodes sont les mieux représentées dans le jeu de données de la Galerie Nationale. Connaître la dispersion temporelle de l'ensemble du jeu de données aide à contextualiser les points de données individuels sélectionnés pour une lecture attentive à l'étape 3 en cela qu'elle donne une idée de la relation spécifique entre le point de donnée et la chronologie du jeu de données entier, en comparaison de tous les autres points de données.
 
 ## Exemple de dispersion temporelle du jeu de données avec les données Twitter
 
@@ -151,29 +150,29 @@ La deuxième question requière un tri prélable des données avant qu'il soit p
  
  </br>
 
-    A tibble: 20 x 3
-       date       has_sesame_ht     n
-       <date>     <lgl>         <int>
-     1 2021-12-04 FALSE            99
-     2 2021-12-04 TRUE             17
-     3 2021-12-05 FALSE           165
-     4 2021-12-05 TRUE             53
-     5 2021-12-06 FALSE           373
-     6 2021-12-06 TRUE             62
-     7 2021-12-07 FALSE           265
-     8 2021-12-07 TRUE             86
-     9 2021-12-08 FALSE           187
-    10 2021-12-08 TRUE             93
-    11 2021-12-09 FALSE           150
-    12 2021-12-09 TRUE             55
-    13 2021-12-10 FALSE           142
-    14 2021-12-10 TRUE             59
-    15 2021-12-11 FALSE           196
-    16 2021-12-11 TRUE             41
-    17 2021-12-12 FALSE           255
-    18 2021-12-12 TRUE             44
-    19 2021-12-13 FALSE            55
-    20 2021-12-13 TRUE             35
+        ## # A tibble: 20 x 3
+    ##    date       has_sesame_ht     n
+    ##    <date>     <lgl>         <int>
+    ##  1 2021-12-04 FALSE            99
+    ##  2 2021-12-04 TRUE             17
+    ##  3 2021-12-05 FALSE           165
+    ##  4 2021-12-05 TRUE             53
+    ##  5 2021-12-06 FALSE           373
+    ##  6 2021-12-06 TRUE             62
+    ##  7 2021-12-07 FALSE           265
+    ##  8 2021-12-07 TRUE             86
+    ##  9 2021-12-08 FALSE           187
+    ## 10 2021-12-08 TRUE             93
+    ## 11 2021-12-09 FALSE           150
+    ## 12 2021-12-09 TRUE             55
+    ## 13 2021-12-10 FALSE           142
+    ## 14 2021-12-10 TRUE             59
+    ## 15 2021-12-11 FALSE           196
+    ## 16 2021-12-11 TRUE             41
+    ## 17 2021-12-12 FALSE           255
+    ## 18 2021-12-12 TRUE             44
+    ## 19 2021-12-13 FALSE            55
+    ## 20 2021-12-13 TRUE             35
 
 Ce processus permet la création d'une nouvelle colonne à laquelle est attribuée une valeur "TRUE" (vrai) si le tweet contient le hashtag et "FALSE" (faux) si ce n'est pas le cas. Ceci est obtenu avec la fonction `mutate()`, qui crée une nouvelle colonne nommée "has_sesame_ht" (contient le hashtag "sesame"). Pour ajouter les valeurs TRUE/FALSE dans cette colonne, la fonction utilisée est `str_detect()`. Cette fonction a pour instruction de détecter, dans la colonne "text" dans laquelle se trouvent le tweet. Puis la fonction est ensuite renseignée avec ce qu'elle doit détecter. Ici on utilise la fonction `regex()` dans `str_detect()`, et ce faisant il est possible de préciser que vous êtes intéressé par toutes les variations du hashtag (par exempe #SesameStreet, #Sesamestreet, #sesamestreet, #SESAMESTREET, etc.).
 Ceci est obtenu en paramétrant "ignore_case = TRUE" dans la fonction `regex()` qui applique une expression régulière à vos données. Les expressions régulières peuvent être vue comme une fonction "recherche et remplace" étendue. </br>
