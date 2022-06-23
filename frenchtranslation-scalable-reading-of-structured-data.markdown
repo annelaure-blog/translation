@@ -44,15 +44,15 @@ avatar_alt: Description de l'image de la leçon
   - [rtweet](#rtweet)
 - [Etape 1 : Exploration chronologique du jeu de données](#Etape-1-Exploration-chronologique-du-jeu-de-données)
   - [Exemple de dispersion temporelle du jeu de données avec les données Twitter](#Exemple-de-dispersion-temporelle-du-jeu-de-données-avec-les-données-Twitter)
-- [Etape 2 : Explorer un jeu de données en créant des catégories binaires analytiques](#Etape-2-Explorer-un-jeu-de-données-en-créant-des-catégories-binaires-analytiques)
+- [Etape 2: Explorer un jeu de données en créant des catégories binaires analytiques](#Etape-2-Explorer-un-jeu-de-données-en-créant-des-catégories-binaires-analytiques)
   - [Exemple avec une exploration binaire sur des données Twitter](#Exemple-avec-une-exploration-binaire-sur-des-données-Twitter)
     - [Interaction avec les comptes vérifiés versus non vérifiés](#Interaction-avec-les-comptes-vérifiés-versus-non-vérifiés)
-- [Etape 3 : Sélection reproductible et systématique de points de données pour la lecture attentive (*close reading*)](#Etape-3-Sélection-reproductible-et-systématique-de-points-de-données-pour-la-lecture-attentive)
+- [Etape 3: Sélection reproductible et systématique de points de données pour la lecture attentive (*close reading*)](#Etape-3-Sélection-reproductible-et-systématique-de-points-de-données-pour-la-lecture-attentive)
     - [Exemple de sélection reproductible et systématique pour la lecture attentive à partir des données Twitter](#Exemple-de-sélection-reproductible-et-systématique-pour-la-lecture-attentive-à-partir-des-données-Twitter)  
          - [Créer un nouveau jeu de données du TOP 20 des tweets les plus likés des comptes vérifiés et non vérifiés](#Créer-un-nouveau-jeu-de-données-du-TOP-20-des-tweets-les-plus-likés-des-comptes-vérifiés-et-non-vérifiés)
          - [Inspecter notre nouveau tableau de données](#Inspecter-notre-nouveau-tableau-de-données)
          - [Exporter le nouveau jeu de données dans un fichier JSON](#Exporter-le-nouveau-jeu-de-données-dans-un-fichier-JSON)
-         - [Créer un nouveau jeu de données du top 20 des tweets les plus likés](#Créer-un-nouveau-jeu-de-données-du-top-20-des-tweets-les-plus-likés)
+         - [Créer un nouveau jeu de données du top 20 des tweets les plus likés (comptes non vérifiés seulement)](#Créer-un-nouveau-jeu-de-données-du-top-20-des-tweets-les-plus-likés-comptes-non-vérifiés-seulement)
          - [Inspecter notre nouveau tableau de données](#Inspecter-notre-nouveau-tableau-de-données)
          - [Exporter le nouveau jeu de données en fichier JSON](#Exporter-le-nouveau-jeu-de-données-en-fichier-JSON)
 - [Conclusion : poursuivre avec la lecture attentive](#Conclusion-poursuivre-avec-la-lecture-attentive)
@@ -391,7 +391,7 @@ Après avoir converti vos données au format JSON, vous êtes en mesure d'utilis
 
        write(Top_20_liked_tweets, "Top_20_liked_tweets.json")
     
-### Créer un nouveau jeu de données du top 20 des tweets les plus likés
+### Créer un nouveau jeu de données du top 20 des tweets les plus likés (comptes non vérifiés seulement)
 
 Vous souhaitez maintenant voir le Top 20 des tweets les plus likés par les comptes non vérifiés.
 
