@@ -1,8 +1,8 @@
 ---
-title: "La lecture évolutive de données structurées"
+title: "La lecture multi-échelles de données structurées"
 collection: lecons
 layout: lesson
-slug: lecture-evolutive-de-donnees-structurees
+slug: lecture-multi-echelles-de-donnees-structurees
 date: AAAA-MM-JJ
 translation_date: AAAA-MM-JJ (champ spécifique aux traductions)
 authors:
@@ -36,7 +36,7 @@ avatar_alt: Description de l'image de la leçon
 - [Objectifs de la leçon](#Objectifs-de-la-leçon) 
 - [Structure de la leçon](#Structure-de-la-leçon)
 - [La lecture multi-échelles, une introduction aux méthodes digitales pour les débutants](#La-lecture-multi-échelles-,-une-introduction-aux-méthodes-digitales-pour-les-débutants)
-- [La lecture évolutive](#La-lecture-évolutive)
+- [La lecture multi-échelles](#La-lecture-multi-échelles)
 - [Données et prérequis](#Données-et-prérequis)
   - [tidyverse](#tidyverse)
   - [lubridate](#lubridate)
@@ -70,12 +70,12 @@ Une fois cette leçon complétée, les lecteurs seront en mesure de :
 
 # Structure de la leçon
 
-Dans cette leçon, nous introduisons un processus de travail pour une lecture évolutive (*scalable reading*) de données structurées - une combinaison d'interprétation rigoureuse de points de données individuels et d'analyse statistique du jeu de données entier. 
+Dans cette leçon, nous introduisons un processus de travail pour une lecture multi-échelles (*scalable reading*) de données structurées - une combinaison d'interprétation rigoureuse de points de données individuels et d'analyse statistique du jeu de données entier. 
 Cette leçon est structurée en deux cheminements parallèles :
 * un cheminement général qui suggère une façon de travailler analytiquement avec des données structurées où la lecture distante d'un grand jeu de données est 
 utilisée comme contexte pour une lecture proche de points de données distincts ;
 * un cheminement basé sur un exemple dans lequel nous utilisons des fonctions simples du language de programmation R pour analyser des données Twitter.
-En combinant ces deux cheminements, nous montrons comment la lecture évolutive peut être employée pour analyser une large variété de données structurées.
+En combinant ces deux cheminements, nous montrons comment la lecture multi-échelles peut être employée pour analyser une large variété de données structurées.
 Notre processus de travail évolutif suggéré inclus deux types de lectures distantes qui peuvent aider à explorer et analyser les caractéristiques globales de grands jeux de données (chronologiquement et en relation avec des structures binaires), en plus de permettre l'utilisation de la lecture distante pour sélectionner des points de données individuels pour une lecture proche (*close reading*) de manière systématique et reproductible.
 
 # La lecture multi-échelles, une introduction aux méthodes digitales pour les débutants
