@@ -49,7 +49,7 @@ avatar_alt: Description de l'image de la leçon
     - [Interaction avec les comptes vérifiés versus non vérifiés](#Interaction-avec-les-comptes-vérifiés-versus-non-vérifiés)
 - [Etape 3: Sélection reproductible et systématique de points de données pour la lecture proche (*close reading*)](#Etape-3-Sélection-reproductible-et-systématique-de-points-de-données-pour-la-lecture-proche)
     - [Exemple de sélection reproductible et systématique pour la lecture proche à partir des données Twitter](#Exemple-de-sélection-reproductible-et-systématique-pour-la-lecture-proche-à-partir-des-données-Twitter)  
-         - [Créer un nouveau jeu de données du TOP 20 des tweets les plus likés des comptes vérifiés et non vérifiés](#Créer-un-nouveau-jeu-de-données-du-TOP-20-des-tweets-les-plus-likés-des-comptes-vérifiés-et-non-vérifiés)
+         - [Créer un nouveau jeu de données du top 20 des tweets les plus likés des comptes vérifiés et non vérifiés](#Créer-un-nouveau-jeu-de-données-du-top-20-des-tweets-les-plus-likés-des-comptes-vérifiés-et-non-vérifiés)
          - [Inspecter notre nouveau tableau de données](#Inspecter-notre-nouveau-tableau-de-données)
          - [Exporter le nouveau jeu de données dans un fichier JSON](#Exporter-le-nouveau-jeu-de-données-dans-un-fichier-JSON)
          - [Créer un nouveau jeu de données du top 20 des tweets les plus likés (comptes non vérifiés seulement)](#Créer-un-nouveau-jeu-de-données-du-top-20-des-tweets-les-plus-likés-comptes-non-vérifiés-seulement)
@@ -286,7 +286,7 @@ En démarrant avec Ggplot, le tuyau (`%>%`) est remplacé par un `+`.
 ### Interaction avec les comptes vérifiés versus non vérifiés
 
 Dans cette partie de l'exemple vous souhaitez savoir dans quelle mesure les gens intéragissent avec les tweets des comptes vérifiés versus avec les tweets des comptes non vérifiés. Nous avons choisi de compter les "like" comme une mesure du niveau d'interaction par exemple. Comparer les niveaux d'interaction avec ces deux types
-de  comptes va vous aider à estimer si les comptes vérifiés moins représentés ont plus d'influence et de pouvoir malgré leur faible représentation, parce que les gens interagissent beaucoup plus avec leurs tweets que ceux des comptes non vérifiés.
+de  comptes va vous aider à estimer si les comptes vérifiés les moins représentés ont plus d'influence et de pouvoir malgré leur faible représentation, parce que les gens interagissent beaucoup plus avec leurs tweets qu'avec ceux des comptes non vérifiés.
 
     sesamestreet_data %>% 
       group_by(verified) %>% 
@@ -300,7 +300,7 @@ de  comptes va vous aider à estimer si les comptes vérifiés moins représent�
     ## 1 FALSE      0.892
     ## 2 TRUE     114.
 
-Dans le code ci-dessus, vous groupez le jeu de données en vous basant sur le statut "vérifié" de chaque tweet. Une fois que vous avez utilisé la fonction `group_by`, toutes les opérations à suivre sont effectuées en prenant en compte les groupes. Autrement dit, l'ensemble des tweets provenant des comptes non vérifiés d'une part, et des comptes vérifiés d'autre part, seront désormais considérés comme des groupes. La prochaine étape est d'utiliser la fonction `summarise` pour calculer la moyenne des “favorite_count” (nombre de likes), c'est-à-dire la moyenne (gns) du nombre de "like" par tweets provenant des comptes non vérifiés VS des comptes vérifiés.
+Dans le code ci-dessus, vous groupez le jeu de données en vous basant sur le statut "vérifié" de chaque tweet. Une fois que vous avez utilisé la fonction `group_by`, toutes les opérations à suivre sont effectuées en prenant en compte les groupes. Autrement dit, l'ensemble des tweets provenant des comptes non vérifiés d'une part, et des comptes vérifiés d'autre part, seront désormais considérés comme des groupes. La prochaine étape est d'utiliser la fonction `summarise` pour calculer la moyenne des “favorite_count” (nombre de likes), c'est-à-dire la moyenne (gns) du nombre de "like" par tweets provenant des comptes non vérifiés versus des comptes vérifiés.
 
 Dans cette prochaine étape, vous ajoutez le résultat obtenu ci-dessus à un tableau de données, avec une nouvelle colonne "interaction" où vous spécifiez qu'il s'agit de "favorite_count".
 
@@ -334,11 +334,11 @@ Le nombre de points de données choisis pour la lecture attentive va dépendre d
 
 Connaissant la relation intéressante entre la faible représentation, mais les hauts niveaux d'interactions des tweets provenant de comptes vérifiés, nous voulions effectuer une lecture attentive des 20 tweets les plus "likés", non seulement pour tout le corpus, mais aussi les 20 tweets les plus "likés" émis par des comptes non vérifiés. Ceci afin de nous permettre de voir si l'on pouvait identifier des différences dans la manière dont ces tweets parlent de l'émission et de son histoire. Nous avons choisi le top 20 parce que cela correspondait à une charge de travail faisable compte tenu du temps dont nous disposions.
 
-Si vous aviez travaillé avec les données de la Galerie Nationale, peut-être qu'une sélection du top 5 ou du top 10 des oeuvres les plus exposées ou les plus empruntées des artistes danois VS internationaux auraient suffi pour étudier plus en détail leurs différences et points communs via une lecture attentive des artistes, du type d'oeuvre, de la taille, du contenu, de la période historique, etc.
+Si vous aviez travaillé avec les données de la Galerie Nationale, peut-être qu'une sélection du top 5 ou du top 10 des oeuvres les plus exposées ou les plus empruntées des artistes danois versus internationaux auraient suffi pour étudier plus en détail leurs différences et points communs via une lecture proche des artistes, du type d'oeuvre, de la taille, du contenu, de la période historique, etc.
 
-## Exemple de sélection reproductible et systématique pour la lecture attentive à partir des données Twitter 
+## Exemple de sélection reproductible et systématique pour la lecture proche à partir des données Twitter 
 
-Dans cet exemple vous vous intéressez à la sélection du Top 20 des tweets les plus "likés" pour l'ensemble du corpus. Sachant que beaucoup de ces tweets proviennent probablement de comptes vérifiés, vous souhaitez également sélectionner le TOP 20 des tweets issus de comptes non vérifiés afin de pouvoir comparer ces deux catégories.
+Dans cet exemple vous vous intéressez à la sélection du top 20 des tweets les plus "likés" pour l'ensemble du corpus. Sachant que beaucoup de ces tweets proviennent probablement de comptes vérifiés, vous souhaitez également sélectionner le top 20 des tweets issus de comptes non vérifiés afin de pouvoir comparer ces deux catégories.
 Pour examiner les tweets originaux seulement, vous commencez par exclure les tweets qui sont des "retweets".
 Dans le coin supérieur droit de l'interface du Studio R, vous trouverez "l'Environnement global" de R (*Global environment*) contenant le tableau de données *sesamestreet_data*. En cliquant sur le tableau de données, vous pourrez voir les lignes et les colonnes contenant les données twitter. En regardant la colonne "is_retweet", vous verrez que cette colonne indique si le tweet est un retweet ou non par les valeurs TRUE ou FALSE.
 
@@ -354,7 +354,7 @@ Comme vous pouvez le voir dans l'Environnement Global, votre jeu de données *se
 
 En regardant la colonne "favorite_count", vous pouvez observer combien de "likes" totalise votre top 20. Dans notre exemple, le top 20 a pour valeur minimale de "likes" 50. Ces nombres sont des variables qui changeront lorsque vous reproduirez l'expérience par vous-mêmes. Assurez-vous de bien vérifier ces nombres.
 
-### Créer un nouveau jeu de données du TOP 20 des tweets les plus likés des comptes vérifiés et non vérifiés
+### Créer un nouveau jeu de données du top 20 des tweets les plus likés des comptes vérifiés et non vérifiés
 
 Comme vous le savez maintenant, la valeur minimale de "favorite_count" est de 50, vous pouvez ajouter une deuxième fonction `filter` à notre morceau de code précédent afin de retenir seulement les lignes avec une valeur "favorite_count" supérieure à 50. 
 Maintenant que vous avez le top 20 des tweets les plus likés, vous pouvez créer un nouveau jeu de données appelé *sesamestreet_data_favorite_count_over_50*.
@@ -373,14 +373,14 @@ Pour créer une vue d'ensemble rapide de notre nouveau jeu de données, utilison
       arrange(desc(favorite_count)) (Output removed because of privacy reasons) 
       
 Vous pouvez ensuite les classer par la valeur "favorite_count" en utilisant la fonction `arrange`.
-Ce morceau de code retourne un tableau de données contenant les valeurs déjà évoquées. Il est plus facile à inspecter que si l'on regardait l'ensemble du jeu de données sesamestreet_data_favorite_count_over_50 dans notre Environnement Global.
+Ce morceau de code retourne un tableau de données contenant les valeurs déjà évoquées. Il est plus facile à inspecter que si l'on regardait l'ensemble du jeu de données sesamestreet_data_favorite_count_over_50 dans notre environnement global.
 
 ### Exporter le nouveau jeu de données dans un fichier JSON
 
 Pour exporter votre nouveau jeu de données hors de l'environnement R et le sauvegarder sous forme d'un fichier JSON, vous pouvez utiliser la fonction `toJSON` du paquet jsonlite. Nous choisissons le format de fichier JSON car nos données twitter sont relativement complexes avec des exemples de listes entre les lignes. Par exemple plusieurs hashtags sont stockés sous forme de listes au sein d'une ligne. Cette situation est difficile à gérer dans les formats de données rectangulaires comme le csv, raison pour laquelle nous avons opté pour le format JSON.
 
 Afin de vous assurer que vos données sont stockées de la manière la plus gérable et structurée possible, l'ensemble de vos fichiers de données sont doublés avec les mêmes informations :
-1. Le nombre de tweets / observations contenues dans le jeu de données
+1. Le nombre de tweets / observations contenus dans le jeu de données
 2. Quelle variable détermine le tri des données
 3. Si les tweets proviennent de tous les types de comptes ou juste les comptes vérifiés
 4. L'année de production des données
@@ -393,7 +393,7 @@ Après avoir converti vos données au format JSON, vous êtes en mesure d'utilis
     
 ### Créer un nouveau jeu de données du top 20 des tweets les plus likés (comptes non vérifiés seulement)
 
-Vous souhaitez maintenant voir le Top 20 des tweets les plus likés par les comptes non vérifiés.
+Vous souhaitez maintenant voir le top 20 des tweets les plus likés par les comptes non vérifiés.
 
     sesamestreet_data %>% 
       filter(is_retweet == FALSE) %>%
@@ -431,7 +431,7 @@ A nouveau nous utilisons la fonction `toJSON` pour exporter nos données dans un
 Vous devriez maintenant avoir deux fichiers JSON stockés dans votre répertoire désigné, prêt à être chargés dans une autre fenêtre R Markdown pour une lecture attentive. Vous pouvez aussi inspecter les colonnes de texte du jeu de données dans l'environnement global R.
 Vous êtes maintenant en mesure de copier les URLs du tableau de données pour inspecter les tweets individuellement sur twitter. Rappelez-vous de bien relire les conditions générales de Twitter et d'agir en les respectant. Ces conditions générale stipulent par exemple que vous n'êtes pas autorisé à partager votre jeu de données avec d'autres, à l'exception d'une liste d'ID de tweets. Il est également précisé que le matching de comptes twitter et d'individus s'effectuant hors de Twitter doivent respecter des règles très strictes et comporte de nombreuses limites. Enfin vous êtes également restreints si vous souhaitez publier vos données ou citer des tweets, etc.
 
-# Conclusion: poursuivre avec la lecture attentive
+# Conclusion: poursuivre avec la lecture proche
 
 Quand vous avez sélectionné les points de données individuels à examiner de manière plus attentive (étape 3), les étapes initiales d'exploration via la lecture distante (étapes 1 et 2) peuvent être utilisées en combinaison pour constituer un contexte hautement qualifié pour nourrir l'analyse plus détaillée. En retournant à l'exploration chronologique (étape 1), vous saurez où se situent les points de données vous avez sélectionnés pour analyser individuellement se situent dans le jeu de données global et serez en mesure de considérer l'impact de cette information sur votre analyse. Par exemple, ces points de données sont-ils situés parmi les premiers ou les derniers tweets de la distribution ? Font-ils partis d'un pic ? Comment interpréter cette information ? 
 En considérant les structures binaires (étape 2), la lecture distante peut aider à déterminer si un point de donnée est une anomalie ou s'il est représentatif d'une tendance plus générale dans les données, et de déterminer la taille de la portion du jeu de données qu'il représente en relation avec un paramètre donné. Dans l'exemple utilisant les données Twitter, la lecture attentive de points de données sélectionnés peut être contextualisée par la lecture distante de la manière suivante : l'exploration chronologique aide à déterminer comment les 20 tweets sélectionnés pour la lecture attentive sont situés en relation avec un évènement considéré comme pertinent. Peut-être qu'un tweet a été posté plus tôt que les autres, indiquant une première réaction "à chaud" sur un sujet. Peut-être qu'un tweet est considéré comme "en retard" par rapport aux autres peut indiquer une perspective plus réfléchie sur un sujet.
