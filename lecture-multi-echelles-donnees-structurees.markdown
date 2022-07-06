@@ -35,7 +35,7 @@ avatar_alt: Description de l'image de la leçon
 
 - [Objectifs de la leçon](#Objectifs-de-la-leçon) 
 - [Structure de la leçon](#Structure-de-la-leçon)
-- [La lecture multi-échelles, une introduction aux méthodes digitales pour les débutants](#La-lecture-multi-échelles-,-une-introduction-aux-méthodes-digitales-pour-les-débutants)
+- [La lecture multi-échelles, une introduction aux méthodes digitales pour les débutants](#La-lecture-multi-échelles-une-introduction-aux-méthodes-digitales-pour-les-débutants)
 - [La lecture multi-échelles](#La-lecture-multi-échelles)
 - [Données et prérequis](#Données-et-prérequis)
   - [tidyverse](#tidyverse)
